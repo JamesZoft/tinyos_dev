@@ -1,0 +1,448 @@
+<?xml version="1.0" ?><component loc="33:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformLedsC.nc" nicename="tos.platforms.mica.PlatformLedsC" qname="PlatformLedsC">
+      <documentation loc="1:/opt/tinyos-2.1.1/tos/platforms/micaz/hardware.h">
+        <short>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.</short>
+        <long>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.  By
+  downloading, copying, installing or using the software you agree to
+  this license.  If you do not agree to this license, do not download,
+  install, copy or use the software.
+
+  Copyright (c) 2004-2005 Crossbow Technology, Inc.
+  Copyright (c) 2002-2003 Intel Corporation.
+  Copyright (c) 2000-2003 The Regents of the University  of California.    
+  All rights reserved.
+
+  Permission to use, copy, modify, and distribute this software and its
+  documentation for any purpose, without fee, and without written
+  agreement is hereby granted, provided that the above copyright
+  notice, the (updated) modification history and the author appear in
+  all copies of this source code.
+
+  Permission is also granted to distribute this software under the
+  standard BSD license as contained in the TinyOS distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE INTEL OR ITS
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  @author Jason Hill, Philip Levis, Nelson Lee, David Gay
+  @author Alan Broad &lt;abroad@xbow.com&gt;
+  @author Matt Miller &lt;mmiller@xbow.com&gt;
+  @author Martin Turon &lt;mturon@xbow.com&gt;
+
+  $Id: hardware.h,v 1.7 2009/07/01 19:27:00 scipio Exp $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="47:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformLedsC.nc">
+          <from><interface-ref name="Led0" ref="0x405278e8" scoped=""/></from>
+          <to><interface-ref name="PortA2" ref="0x40416010" scoped=""/></to>
+        </wire>
+        <wire loc="48:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformLedsC.nc">
+          <from><interface-ref name="Led1" ref="0x40526308" scoped=""/></from>
+          <to><interface-ref name="PortA1" ref="0x40417590" scoped=""/></to>
+        </wire>
+        <wire loc="49:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformLedsC.nc">
+          <from><interface-ref name="Led2" ref="0x40526d10" scoped=""/></from>
+          <to><interface-ref name="PortA0" ref="0x4040daf0" scoped=""/></to>
+        </wire>
+        <wire loc="45:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformLedsC.nc">
+          <from><interface-ref name="MoteInit" ref="0x403ff548" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x405256e0" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="35:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformLedsC.nc" name="Led0" provided="1" ref="0x405278e8">
+      <component-ref nicename="tos.platforms.mica.PlatformLedsC" qname="PlatformLedsC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Led0" ref="0x405278e8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x40527ac0" scoped=""/>
+        <function-ref name="isInput" ref="0x40527ba0" scoped=""/>
+        <function-ref name="toggle" ref="0x40527c80" scoped=""/>
+        <function-ref name="isOutput" ref="0x40527d60" scoped=""/>
+        <function-ref name="get" ref="0x40527e40" scoped=""/>
+        <function-ref name="makeOutput" ref="0x40527f20" scoped=""/>
+        <function-ref name="set" ref="0x40526018" scoped=""/>
+        <function-ref name="clr" ref="0x405260f8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="36:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformLedsC.nc" name="Led1" provided="1" ref="0x40526308">
+      <component-ref nicename="tos.platforms.mica.PlatformLedsC" qname="PlatformLedsC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Led1" ref="0x40526308" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x405264e0" scoped=""/>
+        <function-ref name="isInput" ref="0x405265c0" scoped=""/>
+        <function-ref name="toggle" ref="0x405266a0" scoped=""/>
+        <function-ref name="isOutput" ref="0x40526780" scoped=""/>
+        <function-ref name="get" ref="0x40526860" scoped=""/>
+        <function-ref name="makeOutput" ref="0x40526940" scoped=""/>
+        <function-ref name="set" ref="0x40526a20" scoped=""/>
+        <function-ref name="clr" ref="0x40526b00" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="38:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformLedsC.nc" name="Init" provided="0" ref="0x405256e0">
+      <component-ref nicename="tos.platforms.mica.PlatformLedsC" qname="PlatformLedsC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x405256e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x405258b8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="37:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformLedsC.nc" name="Led2" provided="1" ref="0x40526d10">
+      <component-ref nicename="tos.platforms.mica.PlatformLedsC" qname="PlatformLedsC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Led2" ref="0x40526d10" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x40526ee8" scoped=""/>
+        <function-ref name="isInput" ref="0x40525010" scoped=""/>
+        <function-ref name="toggle" ref="0x405250f0" scoped=""/>
+        <function-ref name="isOutput" ref="0x405251d0" scoped=""/>
+        <function-ref name="get" ref="0x405252b0" scoped=""/>
+        <function-ref name="makeOutput" ref="0x40525390" scoped=""/>
+        <function-ref name="set" ref="0x40525470" scoped=""/>
+        <function-ref name="clr" ref="0x40525550" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="37:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc" name="PortA0" provided="1" ref="0x4040daf0">
+      <component-ref nicename="tos.chips.atm128.pins.HplAtm128GeneralIOC" qname="HplAtm128GeneralIOC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PortA0" ref="0x4040daf0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x4040dcc8" scoped=""/>
+        <function-ref name="isInput" ref="0x4040dda8" scoped=""/>
+        <function-ref name="toggle" ref="0x4040de88" scoped=""/>
+        <function-ref name="isOutput" ref="0x40417010" scoped=""/>
+        <function-ref name="get" ref="0x404170f0" scoped=""/>
+        <function-ref name="makeOutput" ref="0x404171d0" scoped=""/>
+        <function-ref name="set" ref="0x404172b0" scoped=""/>
+        <function-ref name="clr" ref="0x40417390" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="38:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc" name="PortA1" provided="1" ref="0x40417590">
+      <component-ref nicename="tos.chips.atm128.pins.HplAtm128GeneralIOC" qname="HplAtm128GeneralIOC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PortA1" ref="0x40417590" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x40417768" scoped=""/>
+        <function-ref name="isInput" ref="0x40417848" scoped=""/>
+        <function-ref name="toggle" ref="0x40417928" scoped=""/>
+        <function-ref name="isOutput" ref="0x40417a08" scoped=""/>
+        <function-ref name="get" ref="0x40417ae8" scoped=""/>
+        <function-ref name="makeOutput" ref="0x40417bc8" scoped=""/>
+        <function-ref name="set" ref="0x40417ca8" scoped=""/>
+        <function-ref name="clr" ref="0x40417d88" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="39:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc" name="PortA2" provided="1" ref="0x40416010">
+      <component-ref nicename="tos.chips.atm128.pins.HplAtm128GeneralIOC" qname="HplAtm128GeneralIOC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PortA2" ref="0x40416010" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x404161e8" scoped=""/>
+        <function-ref name="isInput" ref="0x404162c8" scoped=""/>
+        <function-ref name="toggle" ref="0x404163a8" scoped=""/>
+        <function-ref name="isOutput" ref="0x40416488" scoped=""/>
+        <function-ref name="get" ref="0x40416568" scoped=""/>
+        <function-ref name="makeOutput" ref="0x40416648" scoped=""/>
+        <function-ref name="set" ref="0x40416728" scoped=""/>
+        <function-ref name="clr" ref="0x40416808" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="36:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformP.nc" name="MoteInit" provided="0" ref="0x403ff548">
+      <component-ref nicename="tos.platforms.mica.PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="MoteInit" ref="0x403ff548" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x403ff720" scoped=""/>
+      </interface-functions>
+    </interface><component loc="33:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformP.nc" nicename="tos.platforms.mica.PlatformP" qname="PlatformP" safe="">
+      <documentation loc="1:/opt/tinyos-2.1.1/tos/platforms/micaz/hardware.h">
+        <short>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.</short>
+        <long>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.  By
+  downloading, copying, installing or using the software you agree to
+  this license.  If you do not agree to this license, do not download,
+  install, copy or use the software.
+
+  Copyright (c) 2004-2005 Crossbow Technology, Inc.
+  Copyright (c) 2002-2003 Intel Corporation.
+  Copyright (c) 2000-2003 The Regents of the University  of California.    
+  All rights reserved.
+
+  Permission to use, copy, modify, and distribute this software and its
+  documentation for any purpose, without fee, and without written
+  agreement is hereby granted, provided that the above copyright
+  notice, the (updated) modification history and the author appear in
+  all copies of this source code.
+
+  Permission is also granted to distribute this software under the
+  standard BSD license as contained in the TinyOS distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE INTEL OR ITS
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  @author Jason Hill, Philip Levis, Nelson Lee, David Gay
+  @author Alan Broad &lt;abroad@xbow.com&gt;
+  @author Matt Miller &lt;mmiller@xbow.com&gt;
+  @author Martin Turon &lt;mturon@xbow.com&gt;
+
+  $Id: hardware.h,v 1.7 2009/07/01 19:27:00 scipio Exp $
+</long>
+      </documentation>
+      <module/>
+    </component><component loc="33:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc" nicename="tos.chips.atm128.pins.HplAtm128GeneralIOC" qname="HplAtm128GeneralIOC">
+      <documentation loc="27:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+        <short>
+ Provide GeneralIO interfaces for all of the ATmega128's pins.</short>
+        <long>
+ Provide GeneralIO interfaces for all of the ATmega128's pins.
+
+ @author Martin Turon &lt;mturon@xbow.com&gt;
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="182:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortG0" ref="0x40434750" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x404b7880" scoped=""/></to>
+        </wire>
+        <wire loc="156:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortD1" ref="0x40426d08" scoped=""/></from>
+          <to><interface-ref name="Pin1" ref="0x40472a80" scoped=""/></to>
+        </wire>
+        <wire loc="167:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortE3" ref="0x404292f0" scoped=""/></from>
+          <to><interface-ref name="Pin3" ref="0x4047d7d0" scoped=""/></to>
+        </wire>
+        <wire loc="176:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortF3" ref="0x4042d4b0" scoped=""/></from>
+          <to><interface-ref name="Pin3" ref="0x4048c030" scoped=""/></to>
+        </wire>
+        <wire loc="134:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortA6" ref="0x404148e0" scoped=""/></from>
+          <to><interface-ref name="Pin6" ref="0x40460c88" scoped=""/></to>
+        </wire>
+        <wire loc="174:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortF1" ref="0x4042e0a0" scoped=""/></from>
+          <to><interface-ref name="Pin1" ref="0x40482d30" scoped=""/></to>
+        </wire>
+        <wire loc="137:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortB0" ref="0x40413ce8" scoped=""/></from>
+          <to><interface-ref name="Pin0" ref="0x40465dc8" scoped=""/></to>
+        </wire>
+        <wire loc="148:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortC2" ref="0x404204b0" scoped=""/></from>
+          <to><interface-ref name="Pin2" ref="0x404709e8" scoped=""/></to>
+        </wire>
+        <wire loc="159:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortD4" ref="0x40424c08" scoped=""/></from>
+          <to><interface-ref name="Pin4" ref="0x4047a790" scoped=""/></to>
+        </wire>
+        <wire loc="170:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortE6" ref="0x40430210" scoped=""/></from>
+          <to><interface-ref name="Pin6" ref="0x404874f0" scoped=""/></to>
+        </wire>
+        <wire loc="129:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortA1" ref="0x40417590" scoped=""/></from>
+          <to><interface-ref name="Pin1" ref="0x40459cf8" scoped=""/></to>
+        </wire>
+        <wire loc="140:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortB3" ref="0x4041bc08" scoped=""/></from>
+          <to><interface-ref name="Pin3" ref="0x40463ac8" scoped=""/></to>
+        </wire>
+        <wire loc="151:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortC5" ref="0x4041e2f0" scoped=""/></from>
+          <to><interface-ref name="Pin5" ref="0x4046d790" scoped=""/></to>
+        </wire>
+        <wire loc="162:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortD7" ref="0x40422a98" scoped=""/></from>
+          <to><interface-ref name="Pin7" ref="0x404784f0" scoped=""/></to>
+        </wire>
+        <wire loc="179:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortF6" ref="0x404352f0" scoped=""/></from>
+          <to><interface-ref name="Pin6" ref="0x4048bc88" scoped=""/></to>
+        </wire>
+        <wire loc="185:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortG3" ref="0x40432830" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x404ba0b0" scoped=""/></to>
+        </wire>
+        <wire loc="165:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortE1" ref="0x4042bea8" scoped=""/></from>
+          <to><interface-ref name="Pin1" ref="0x4047e4f0" scoped=""/></to>
+        </wire>
+        <wire loc="132:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortA4" ref="0x404154b0" scoped=""/></from>
+          <to><interface-ref name="Pin4" ref="0x40461988" scoped=""/></to>
+        </wire>
+        <wire loc="143:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortB6" ref="0x40419b18" scoped=""/></from>
+          <to><interface-ref name="Pin6" ref="0x4046b7d0" scoped=""/></to>
+        </wire>
+        <wire loc="183:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortG1" ref="0x404333d0" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x404b30b0" scoped=""/></to>
+        </wire>
+        <wire loc="146:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortC0" ref="0x40421010" scoped=""/></from>
+          <to><interface-ref name="Pin0" ref="0x404716f8" scoped=""/></to>
+        </wire>
+        <wire loc="157:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortD2" ref="0x40425750" scoped=""/></from>
+          <to><interface-ref name="Pin2" ref="0x4047b410" scoped=""/></to>
+        </wire>
+        <wire loc="168:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortE4" ref="0x40429ce8" scoped=""/></from>
+          <to><interface-ref name="Pin4" ref="0x4047c170" scoped=""/></to>
+        </wire>
+        <wire loc="177:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortF4" ref="0x4042dea8" scoped=""/></from>
+          <to><interface-ref name="Pin4" ref="0x4048c988" scoped=""/></to>
+        </wire>
+        <wire loc="135:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortA7" ref="0x404132f0" scoped=""/></from>
+          <to><interface-ref name="Pin7" ref="0x4045f6b0" scoped=""/></to>
+        </wire>
+        <wire loc="138:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortB1" ref="0x4041c750" scoped=""/></from>
+          <to><interface-ref name="Pin1" ref="0x40464790" scoped=""/></to>
+        </wire>
+        <wire loc="149:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortC3" ref="0x40420ea8" scoped=""/></from>
+          <to><interface-ref name="Pin3" ref="0x4046e410" scoped=""/></to>
+        </wire>
+        <wire loc="160:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortD5" ref="0x40423670" scoped=""/></from>
+          <to><interface-ref name="Pin5" ref="0x40479170" scoped=""/></to>
+        </wire>
+        <wire loc="171:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortE7" ref="0x40430c08" scoped=""/></from>
+          <to><interface-ref name="Pin7" ref="0x40487e48" scoped=""/></to>
+        </wire>
+        <wire loc="130:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortA2" ref="0x40416010" scoped=""/></from>
+          <to><interface-ref name="Pin2" ref="0x404626b0" scoped=""/></to>
+        </wire>
+        <wire loc="141:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortB4" ref="0x4041a670" scoped=""/></from>
+          <to><interface-ref name="Pin4" ref="0x4046c4f0" scoped=""/></to>
+        </wire>
+        <wire loc="152:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortC6" ref="0x4041ece8" scoped=""/></from>
+          <to><interface-ref name="Pin6" ref="0x40476170" scoped=""/></to>
+        </wire>
+        <wire loc="180:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortF7" ref="0x40435ce8" scoped=""/></from>
+          <to><interface-ref name="Pin7" ref="0x4048a6b0" scoped=""/></to>
+        </wire>
+        <wire loc="155:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortD0" ref="0x40426210" scoped=""/></from>
+          <to><interface-ref name="Pin0" ref="0x40472128" scoped=""/></to>
+        </wire>
+        <wire loc="166:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortE2" ref="0x4042a8e0" scoped=""/></from>
+          <to><interface-ref name="Pin2" ref="0x4047ee48" scoped=""/></to>
+        </wire>
+        <wire loc="175:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortF2" ref="0x4042ea98" scoped=""/></from>
+          <to><interface-ref name="Pin2" ref="0x4048d6b0" scoped=""/></to>
+        </wire>
+        <wire loc="186:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortG4" ref="0x404312f0" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x404c3880" scoped=""/></to>
+        </wire>
+        <wire loc="133:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortA5" ref="0x40415ea8" scoped=""/></from>
+          <to><interface-ref name="Pin5" ref="0x40460330" scoped=""/></to>
+        </wire>
+        <wire loc="144:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortB7" ref="0x40418590" scoped=""/></from>
+          <to><interface-ref name="Pin7" ref="0x4046a170" scoped=""/></to>
+        </wire>
+        <wire loc="173:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortF0" ref="0x4042f670" scoped=""/></from>
+          <to><interface-ref name="Pin0" ref="0x404823d8" scoped=""/></to>
+        </wire>
+        <wire loc="147:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortC1" ref="0x40421a08" scoped=""/></from>
+          <to><interface-ref name="Pin1" ref="0x40470090" scoped=""/></to>
+        </wire>
+        <wire loc="158:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortD3" ref="0x40424210" scoped=""/></from>
+          <to><interface-ref name="Pin3" ref="0x4047bd68" scoped=""/></to>
+        </wire>
+        <wire loc="169:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortE5" ref="0x40428750" scoped=""/></from>
+          <to><interface-ref name="Pin5" ref="0x4047cac8" scoped=""/></to>
+        </wire>
+        <wire loc="178:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortF5" ref="0x4042c8e0" scoped=""/></from>
+          <to><interface-ref name="Pin5" ref="0x4048b330" scoped=""/></to>
+        </wire>
+        <wire loc="128:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortA0" ref="0x4040daf0" scoped=""/></from>
+          <to><interface-ref name="Pin0" ref="0x404593a0" scoped=""/></to>
+        </wire>
+        <wire loc="139:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortB2" ref="0x4041b210" scoped=""/></from>
+          <to><interface-ref name="Pin2" ref="0x40463170" scoped=""/></to>
+        </wire>
+        <wire loc="150:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortC4" ref="0x4041f8e0" scoped=""/></from>
+          <to><interface-ref name="Pin4" ref="0x4046ed68" scoped=""/></to>
+        </wire>
+        <wire loc="161:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortD6" ref="0x404220a0" scoped=""/></from>
+          <to><interface-ref name="Pin6" ref="0x40479ac8" scoped=""/></to>
+        </wire>
+        <wire loc="184:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortG2" ref="0x40433dc8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x404bd880" scoped=""/></to>
+        </wire>
+        <wire loc="164:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortE0" ref="0x4042b4b0" scoped=""/></from>
+          <to><interface-ref name="Pin0" ref="0x4047fb00" scoped=""/></to>
+        </wire>
+        <wire loc="153:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortC7" ref="0x4041d750" scoped=""/></from>
+          <to><interface-ref name="Pin7" ref="0x40476ac8" scoped=""/></to>
+        </wire>
+        <wire loc="131:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortA3" ref="0x40416a08" scoped=""/></from>
+          <to><interface-ref name="Pin3" ref="0x40461030" scoped=""/></to>
+        </wire>
+        <wire loc="142:/opt/tinyos-2.1.1/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc">
+          <from><interface-ref name="PortB5" ref="0x40419120" scoped=""/></from>
+          <to><interface-ref name="Pin5" ref="0x4046ce48" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component></referenced></component>

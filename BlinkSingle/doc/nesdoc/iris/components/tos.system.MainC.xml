@@ -1,0 +1,250 @@
+<?xml version="1.0" ?><component loc="45:/opt/tinyos-2.1.1/tos/system/MainC.nc" nicename="tos.system.MainC" qname="MainC">
+      <documentation loc="1:/opt/tinyos-2.1.1/tos/platforms/micaz/hardware.h">
+        <short>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.</short>
+        <long>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.  By
+  downloading, copying, installing or using the software you agree to
+  this license.  If you do not agree to this license, do not download,
+  install, copy or use the software.
+
+  Copyright (c) 2004-2005 Crossbow Technology, Inc.
+  Copyright (c) 2002-2003 Intel Corporation.
+  Copyright (c) 2000-2003 The Regents of the University  of California.    
+  All rights reserved.
+
+  Permission to use, copy, modify, and distribute this software and its
+  documentation for any purpose, without fee, and without written
+  agreement is hereby granted, provided that the above copyright
+  notice, the (updated) modification history and the author appear in
+  all copies of this source code.
+
+  Permission is also granted to distribute this software under the
+  standard BSD license as contained in the TinyOS distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE INTEL OR ITS
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  @author Jason Hill, Philip Levis, Nelson Lee, David Gay
+  @author Alan Broad &lt;abroad@xbow.com&gt;
+  @author Matt Miller &lt;mmiller@xbow.com&gt;
+  @author Martin Turon &lt;mturon@xbow.com&gt;
+
+  $Id: hardware.h,v 1.7 2009/07/01 19:27:00 scipio Exp $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="61:/opt/tinyos-2.1.1/tos/system/MainC.nc">
+          <from><interface-ref name="Boot" ref="0x403fd188" scoped=""/></from>
+          <to><interface-ref name="Boot" ref="0x404e02b8" scoped=""/></to>
+        </wire>
+        <wire loc="56:/opt/tinyos-2.1.1/tos/system/MainC.nc">
+          <from><interface-ref name="Scheduler" ref="0x404e0650" scoped=""/></from>
+          <to><interface-ref name="Scheduler" ref="0x4034eed8" scoped=""/></to>
+        </wire>
+        <wire loc="57:/opt/tinyos-2.1.1/tos/system/MainC.nc">
+          <from><interface-ref name="PlatformInit" ref="0x404e0c18" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x403f6ee8" scoped=""/></to>
+        </wire>
+        <wire loc="60:/opt/tinyos-2.1.1/tos/system/MainC.nc">
+          <from><interface-ref name="SoftwareInit" ref="0x404f0030" scoped=""/></from>
+          <to><interface-ref name="SoftwareInit" ref="0x403fddb0" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="47:/opt/tinyos-2.1.1/tos/system/MainC.nc" name="SoftwareInit" provided="0" ref="0x403fddb0">
+      <component-ref nicename="tos.system.MainC" qname="MainC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SoftwareInit" ref="0x403fddb0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x403f6010" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-2.1.1/tos/system/MainC.nc" name="Boot" provided="1" ref="0x403fd188">
+      <component-ref nicename="tos.system.MainC" qname="MainC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Boot" ref="0x403fd188" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Boot" qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" ref="0x403fd360" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="36:/opt/tinyos-2.1.1/tos/system/TinySchedulerC.nc" name="Scheduler" provided="1" ref="0x4034eed8">
+      <component-ref nicename="tos.system.TinySchedulerC" qname="TinySchedulerC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Scheduler" ref="0x4034eed8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Scheduler" qname="Scheduler"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x4034a0c0" scoped=""/>
+        <function-ref name="taskLoop" ref="0x4034a1a0" scoped=""/>
+        <function-ref name="runNextTask" ref="0x4034a280" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="48:/opt/tinyos-2.1.1/tos/system/RealMainP.nc" name="PlatformInit" provided="0" ref="0x404e0c18">
+      <component-ref nicename="tos.system.RealMainP" qname="RealMainP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="PlatformInit" ref="0x404e0c18" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x404e0df0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/opt/tinyos-2.1.1/tos/system/RealMainP.nc" name="Scheduler" provided="0" ref="0x404e0650">
+      <component-ref nicename="tos.system.RealMainP" qname="RealMainP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Scheduler" ref="0x404e0650" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Scheduler" qname="Scheduler"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x404e0828" scoped=""/>
+        <function-ref name="taskLoop" ref="0x404e0908" scoped=""/>
+        <function-ref name="runNextTask" ref="0x404e09e8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="49:/opt/tinyos-2.1.1/tos/system/RealMainP.nc" name="SoftwareInit" provided="0" ref="0x404f0030">
+      <component-ref nicename="tos.system.RealMainP" qname="RealMainP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="SoftwareInit" ref="0x404f0030" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x404f0208" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-2.1.1/tos/system/RealMainP.nc" name="Boot" provided="1" ref="0x404e02b8">
+      <component-ref nicename="tos.system.RealMainP" qname="RealMainP"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Boot" ref="0x404e02b8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Boot" qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" ref="0x404e0490" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="37:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformC.nc" name="Init" provided="1" ref="0x403f6ee8">
+      <component-ref nicename="tos.platforms.mica.PlatformC" qname="PlatformC"/>
+      <type-interface alignment="I:1" size="I:2"><interface-ref name="Init" ref="0x403f6ee8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x403fb0e0" scoped=""/>
+      </interface-functions>
+    </interface><component loc="45:/opt/tinyos-2.1.1/tos/system/RealMainP.nc" nicename="tos.system.RealMainP" qname="RealMainP" safe="">
+      <documentation loc="38:/opt/tinyos-2.1.1/tos/system/RealMainP.nc">
+        <short>
+ RealMain implements the TinyOS boot sequence, as documented in TEP 107.</short>
+        <long>
+ RealMain implements the TinyOS boot sequence, as documented in TEP 107.
+
+ @author Philip Levis
+ @date   January 17 2005
+</long>
+      </documentation>
+      <module/>
+    </component><component loc="35:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformC.nc" nicename="tos.platforms.mica.PlatformC" qname="PlatformC">
+      <documentation loc="1:/opt/tinyos-2.1.1/tos/platforms/micaz/hardware.h">
+        <short>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.</short>
+        <long>                                                                     
+  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.  By
+  downloading, copying, installing or using the software you agree to
+  this license.  If you do not agree to this license, do not download,
+  install, copy or use the software.
+
+  Copyright (c) 2004-2005 Crossbow Technology, Inc.
+  Copyright (c) 2002-2003 Intel Corporation.
+  Copyright (c) 2000-2003 The Regents of the University  of California.    
+  All rights reserved.
+
+  Permission to use, copy, modify, and distribute this software and its
+  documentation for any purpose, without fee, and without written
+  agreement is hereby granted, provided that the above copyright
+  notice, the (updated) modification history and the author appear in
+  all copies of this source code.
+
+  Permission is also granted to distribute this software under the
+  standard BSD license as contained in the TinyOS distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE INTEL OR ITS
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  @author Jason Hill, Philip Levis, Nelson Lee, David Gay
+  @author Alan Broad &lt;abroad@xbow.com&gt;
+  @author Matt Miller &lt;mmiller@xbow.com&gt;
+  @author Martin Turon &lt;mturon@xbow.com&gt;
+
+  $Id: hardware.h,v 1.7 2009/07/01 19:27:00 scipio Exp $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="49:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="Init" ref="0x403f6ee8" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x403ff168" scoped=""/></to>
+        </wire>
+        <wire loc="50:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="Atm128Calibrate" ref="0x40401760" scoped=""/></from>
+          <to><interface-ref name="Atm128Calibrate" ref="0x404de880" scoped=""/></to>
+        </wire>
+        <wire loc="52:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="MeasureClock" ref="0x403ff950" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x404de4d0" scoped=""/></to>
+        </wire>
+        <wire loc="53:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="MoteInit" ref="0x403ff548" scoped=""/></from>
+          <to><interface-ref name="PlatformInit" ref="0x40405c10" scoped=""/></to>
+        </wire>
+        <wire loc="54:/opt/tinyos-2.1.1/tos/platforms/mica/PlatformC.nc">
+          <from><interface-ref name="SubInit" ref="0x40404010" scoped=""/></from>
+          <to><interface-ref name="SubInit" ref="0x40401ec0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="35:/opt/tinyos-2.1.1/tos/system/TinySchedulerC.nc" nicename="tos.system.TinySchedulerC" qname="TinySchedulerC">
+      <documentation loc="23:/opt/tinyos-2.1.1/tos/system/TinySchedulerC.nc">
+        <short>
+ The TinyOS scheduler.</short>
+        <long>
+ The TinyOS scheduler. It provides two interfaces: Scheduler,
+ for TinyOS to initialize and run tasks, and TaskBasic, the simplext
+ class of TinyOS tasks (reserved always at-most-once posting,
+ FIFO, parameter-free). For details and information on how to
+ replace the scheduler, refer to TEP 106.
+
+ @author  Phil Levis
+ @date    August 7 2005
+ @see     TEP 106: Tasks and Schedulers
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="43:/opt/tinyos-2.1.1/tos/system/TinySchedulerC.nc">
+          <from><interface-ref name="TaskBasic" ref="0x40354600" scoped=""/></from>
+          <to><interface-ref name="TaskBasic" ref="0x403d3670" scoped=""/></to>
+        </wire>
+        <wire loc="42:/opt/tinyos-2.1.1/tos/system/TinySchedulerC.nc">
+          <from><interface-ref name="Scheduler" ref="0x4034eed8" scoped=""/></from>
+          <to><interface-ref name="Scheduler" ref="0x403d4df8" scoped=""/></to>
+        </wire>
+        <wire loc="44:/opt/tinyos-2.1.1/tos/system/TinySchedulerC.nc">
+          <from><interface-ref name="McuSleep" ref="0x403d8310" scoped=""/></from>
+          <to><interface-ref name="McuSleep" ref="0x40349c28" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component></referenced></component>
