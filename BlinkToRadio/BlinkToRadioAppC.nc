@@ -10,18 +10,16 @@ implementation {
 	components BlinkToRadioC as App;
 	components new TimerMilliC() as Timer0;
 	components ActiveMessageC;
-	//components new AMSenderC (AM_BLINKTORADIOMSG);
-	//components new AMReceiverC (AM_BLINKTORADIOMSG);
-	components SerialActiveMessageC;
-	components new SerialAMSenderC (AM_BLINKTORADIOMSG);
+	components new AMSenderC (AM_BLINKTORADIOMSG);
+	components new AMReceiverC (AM_BLINKTORADIOMSG);
 	
 	
 	App.Boot -> MainC;
 	App.Leds -> LedsC;
 	App.Timer0 -> Timer0;
-	App.Packet -> SerialAMSenderC;
-	App.AMPacket -> SerialAMSenderC;
-	App.AMSend -> SerialAMSenderC;
-	App.AMControl -> SerialActiveMessageC;
-	//App.Receive -> AMReceiverC;
+	App.Packet -> AMSenderC;
+	App.AMPacket -> AMSenderC;
+	App.AMSend -> AMSenderC;
+	App.AMControl -> ActiveMessageC;
+	App.Receive -> AMReceiverC;
 }

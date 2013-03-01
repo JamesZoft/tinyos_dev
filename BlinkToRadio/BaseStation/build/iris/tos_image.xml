@@ -1,11 +1,11 @@
 <tos_image>
   <ident>
-    <uidhash>C8F8A784L</uidhash>
+    <uidhash>40EDD4A8L</uidhash>
     <hostname>eas-154pc01</hostname>
     <username>reedj</username>
     <appname>BaseStationC</appname>
     <userhash>02A26CDEL</userhash>
-    <timestamp>511E4EC1L</timestamp>
+    <timestamp>5130CF3FL</timestamp>
     <deluge_support>no</deluge_support>
     <platform>iris</platform>
   </ident>

@@ -48,20 +48,16 @@ implementation {
 	event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len) {
 		if(len == sizeof(BlinkToRadioMsg) ) {
 			BlinkToRadioMsg* btrpkt = (BlinkToRadioMsg*)payload;
-			
-			if(btrpkt->txnodeid == TOS_NODE_ID) {
-				call Leds.set(btrpkt->counter);
-			}
+			call Leds.set(btrpkt->counter);
 		}
 		return msg;		
 	}
 		
 	event void Timer0.fired() {
-		//call Leds.set(counter);
 		if(!busy) {
-			BlinkToRadioMsg* btrpkt = (BlinkToRadioMsg*) (call Packet.getPayload(&pkt, NULL));
+			BlinkToRadioMsg* btrpkt = (BlinkToRadioMsg*) (call Packet.getPayload(&pkt, (int)NULL));
 			btrpkt->nodeid = TOS_NODE_ID;
-			btrpkt->txnodeid = ((TOS_NODE_ID % 3) + 1);
+			
 			btrpkt->counter = counter++;
 			if(call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(BlinkToRadioMsg)) == SUCCESS) {
 				busy = TRUE;
