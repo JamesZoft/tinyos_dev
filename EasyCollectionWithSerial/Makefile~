@@ -1,5 +1,6 @@
-COMPONENT=EasyDisseminationWithSerialAppC
-CFLAGS += -I$(TOSDIR)/lib/net \
-	-I$(TOSDIR)/lib/net/drip
+COMPONENT=EasyCollectionWithSerialAppC
+CFLAGS += -I/opt/tinyos-2.1.1/tos/lib/net \
+	−I/opt/tinyos-2.1.1/tos/lib/net/le \
+	−I/opt/tinyos-2.1.1/tos/lib/net/ctp
 	
 include $(MAKERULES)
