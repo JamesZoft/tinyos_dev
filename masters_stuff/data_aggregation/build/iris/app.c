@@ -998,7 +998,7 @@ enum __nesc_unnamed4310 {
 enum __nesc_unnamed4311 {
   PLATFORM_BAUDRATE = 57600L
 };
-# 5 "EasyCollectionWithSerial.h"
+# 5 "DataAggregation.h"
 enum __nesc_unnamed4312 {
   AM_TEST_SERIAL_MSG = 0x89
 };
@@ -1987,8 +1987,8 @@ typedef struct __nesc_unnamed4352 {
 } routing_table_entry;
 
 static __inline void routeInfoInit(route_info_t *ri);
-typedef uint16_t EasyCollectionWithSerialC__Read__val_t;
-typedef TMilli EasyCollectionWithSerialC__Timer__precision_tag;
+typedef uint16_t DataAggregationC__Read__val_t;
+typedef TMilli DataAggregationC__Timer__precision_tag;
 typedef TRadio RF230RadioP__PacketTimeStamp__precision_tag;
 typedef uint32_t RF230RadioP__PacketTimeStamp__size_type;
 typedef TRadio RadioAlarmP__Alarm__precision_tag;
@@ -2131,17 +2131,17 @@ enum AMQueueP____nesc_unnamed4357 {
 typedef TMilli /*CtpP.Router*/CtpRoutingEngineP__0__BeaconTimer__precision_tag;
 typedef TMilli /*CtpP.Router*/CtpRoutingEngineP__0__RouteTimer__precision_tag;
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/Boot.nc"
-static void EasyCollectionWithSerialC__Boot__booted(void );
+static void DataAggregationC__Boot__booted(void );
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/SplitControl.nc"
-static void EasyCollectionWithSerialC__SerialControl__startDone(error_t error);
+static void DataAggregationC__SerialControl__startDone(error_t error);
 #line 117
-static void EasyCollectionWithSerialC__SerialControl__stopDone(error_t error);
+static void DataAggregationC__SerialControl__stopDone(error_t error);
 #line 92
-static void EasyCollectionWithSerialC__RadioControl__startDone(error_t error);
+static void DataAggregationC__RadioControl__startDone(error_t error);
 #line 117
-static void EasyCollectionWithSerialC__RadioControl__stopDone(error_t error);
+static void DataAggregationC__RadioControl__stopDone(error_t error);
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
-static void EasyCollectionWithSerialC__Send__sendDone(
+static void DataAggregationC__Send__sendDone(
 #line 85
 message_t * msg, 
 
@@ -2149,7 +2149,7 @@ message_t * msg,
 
 error_t error);
 # 99 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
-static void EasyCollectionWithSerialC__AMSend__sendDone(
+static void DataAggregationC__AMSend__sendDone(
 #line 92
 message_t * msg, 
 
@@ -2166,7 +2166,7 @@ message_t *
 
 
 
-EasyCollectionWithSerialC__Receive__receive(
+DataAggregationC__Receive__receive(
 #line 60
 message_t * msg, 
 void * payload, 
@@ -2177,9 +2177,9 @@ void * payload,
 
 uint8_t len);
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
-static void EasyCollectionWithSerialC__Read__readDone(error_t result, EasyCollectionWithSerialC__Read__val_t val);
+static void DataAggregationC__Read__readDone(error_t result, DataAggregationC__Read__val_t val);
 # 72 "/opt/tinyos-2.1.1/tos/lib/timer/Timer.nc"
-static void EasyCollectionWithSerialC__Timer__fired(void );
+static void DataAggregationC__Timer__fired(void );
 # 51 "/opt/tinyos-2.1.1/tos/interfaces/Init.nc"
 static error_t PlatformP__Init__init(void );
 #line 51
@@ -2407,11 +2407,11 @@ static uint16_t RF230RadioP__RandomCollisionConfig__getTransmitBarrier(message_t
 # 48 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarm.nc"
 static void RadioAlarmP__RadioAlarm__default__fired(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarmP.nc"
-uint8_t arg_0x406631b8);
+uint8_t arg_0x406701b8);
 # 38 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarm.nc"
 static void RadioAlarmP__RadioAlarm__wait(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarmP.nc"
-uint8_t arg_0x406631b8, 
+uint8_t arg_0x406701b8, 
 # 38 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarm.nc"
 uint16_t timeout);
 
@@ -2420,15 +2420,15 @@ uint16_t timeout);
 
 static void RadioAlarmP__RadioAlarm__cancel(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarmP.nc"
-uint8_t arg_0x406631b8);
+uint8_t arg_0x406701b8);
 # 33 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarm.nc"
 static bool RadioAlarmP__RadioAlarm__isFree(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarmP.nc"
-uint8_t arg_0x406631b8);
+uint8_t arg_0x406701b8);
 # 53 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarm.nc"
 static uint16_t RadioAlarmP__RadioAlarm__getNow(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarmP.nc"
-uint8_t arg_0x406631b8);
+uint8_t arg_0x406701b8);
 # 67 "/opt/tinyos-2.1.1/tos/lib/timer/Alarm.nc"
 static void RadioAlarmP__Alarm__fired(void );
 # 37 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/Tasklet.nc"
@@ -2460,7 +2460,7 @@ static message_t *ActiveMessageLayerP__SubReceive__receive(message_t *msg);
 # 59 "/opt/tinyos-2.1.1/tos/interfaces/SendNotifier.nc"
 static void ActiveMessageLayerP__SendNotifier__default__aboutToSend(
 # 36 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/ActiveMessageLayerP.nc"
-am_id_t arg_0x4068a3c0, 
+am_id_t arg_0x406853c0, 
 # 59 "/opt/tinyos-2.1.1/tos/interfaces/SendNotifier.nc"
 am_addr_t dest, 
 #line 57
@@ -2512,7 +2512,7 @@ static uint8_t ActiveMessageLayerP__RadioPacket__headerLength(message_t *msg);
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 static error_t ActiveMessageLayerP__AMSend__send(
 # 33 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/ActiveMessageLayerP.nc"
-am_id_t arg_0x4068cc18, 
+am_id_t arg_0x40687c18, 
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 60
@@ -2529,7 +2529,7 @@ uint8_t len);
 #line 112
 static uint8_t ActiveMessageLayerP__AMSend__maxPayloadLength(
 # 33 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/ActiveMessageLayerP.nc"
-am_id_t arg_0x4068cc18);
+am_id_t arg_0x40687c18);
 # 67 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 static 
 #line 63
@@ -2539,7 +2539,7 @@ message_t *
 
 ActiveMessageLayerP__Snoop__default__receive(
 # 35 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/ActiveMessageLayerP.nc"
-am_id_t arg_0x4068bcc0, 
+am_id_t arg_0x40686cc0, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -2558,7 +2558,7 @@ message_t *
 
 ActiveMessageLayerP__Receive__default__receive(
 # 34 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/ActiveMessageLayerP.nc"
-am_id_t arg_0x4068b628, 
+am_id_t arg_0x40686628, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -2674,35 +2674,35 @@ static resource_client_id_t /*RF230RadioC.SendResourceC.Queue*/FcfsResourceQueue
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(
 # 52 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fbed8);
+uint8_t arg_0x406f6ed8);
 # 51 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__immediateRequested(
 # 52 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fbed8);
+uint8_t arg_0x406f6ed8);
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(
 # 56 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fab50);
+uint8_t arg_0x406f5b50);
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(
 # 56 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fab50);
+uint8_t arg_0x406f5b50);
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resource__release(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 87 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resource__immediateRequest(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resource__request(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resource__default__granted(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__grantedTask__runTask(void );
 # 43 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/BareSend.nc"
@@ -2836,7 +2836,7 @@ static error_t UniqueLayerP__Init__init(void );
 # 35 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/NeighborhoodFlag.nc"
 static bool NeighborhoodP__NeighborhoodFlag__get(
 # 32 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/NeighborhoodP.nc"
-uint8_t arg_0x407b9770, 
+uint8_t arg_0x407b4770, 
 # 35 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/NeighborhoodFlag.nc"
 uint8_t index);
 
@@ -2845,7 +2845,7 @@ uint8_t index);
 
 static void NeighborhoodP__NeighborhoodFlag__set(
 # 32 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/NeighborhoodP.nc"
-uint8_t arg_0x407b9770, 
+uint8_t arg_0x407b4770, 
 # 40 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/NeighborhoodFlag.nc"
 uint8_t index);
 # 60 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/Neighborhood.nc"
@@ -2960,15 +2960,15 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 72
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 37 "/opt/tinyos-2.1.1/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x408c3708);
+uint8_t arg_0x408da708);
 # 81 "/opt/tinyos-2.1.1/tos/lib/timer/Timer.nc"
 static bool /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__isRunning(
 # 37 "/opt/tinyos-2.1.1/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x408c3708);
+uint8_t arg_0x408da708);
 # 53 "/opt/tinyos-2.1.1/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
 # 37 "/opt/tinyos-2.1.1/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x408c3708, 
+uint8_t arg_0x408da708, 
 # 53 "/opt/tinyos-2.1.1/tos/lib/timer/Timer.nc"
 uint32_t dt);
 
@@ -2981,7 +2981,7 @@ uint32_t dt);
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startOneShot(
 # 37 "/opt/tinyos-2.1.1/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x408c3708, 
+uint8_t arg_0x408da708, 
 # 62 "/opt/tinyos-2.1.1/tos/lib/timer/Timer.nc"
 uint32_t dt);
 
@@ -2990,7 +2990,7 @@ uint32_t dt);
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__stop(
 # 37 "/opt/tinyos-2.1.1/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x408c3708);
+uint8_t arg_0x408da708);
 # 71 "/opt/tinyos-2.1.1/tos/lib/timer/Counter.nc"
 static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
 # 83 "/opt/tinyos-2.1.1/tos/interfaces/SplitControl.nc"
@@ -3080,13 +3080,13 @@ static uint8_t MetadataFlagsLayerC__RadioPacket__metadataLength(message_t *msg);
 # 44 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/PacketFlag.nc"
 static void MetadataFlagsLayerC__PacketFlag__clear(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/MetadataFlagsLayerC.nc"
-uint8_t arg_0x40994300, 
+uint8_t arg_0x409af300, 
 # 44 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/PacketFlag.nc"
 message_t *msg);
 #line 29
 static bool MetadataFlagsLayerC__PacketFlag__get(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/MetadataFlagsLayerC.nc"
-uint8_t arg_0x40994300, 
+uint8_t arg_0x409af300, 
 # 29 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/PacketFlag.nc"
 message_t *msg);
 
@@ -3095,7 +3095,7 @@ message_t *msg);
 
 static void MetadataFlagsLayerC__PacketFlag__setValue(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/MetadataFlagsLayerC.nc"
-uint8_t arg_0x40994300, 
+uint8_t arg_0x409af300, 
 # 34 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/PacketFlag.nc"
 message_t *msg, bool value);
 
@@ -3104,7 +3104,7 @@ message_t *msg, bool value);
 
 static void MetadataFlagsLayerC__PacketFlag__set(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/MetadataFlagsLayerC.nc"
-uint8_t arg_0x40994300, 
+uint8_t arg_0x409af300, 
 # 39 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/PacketFlag.nc"
 message_t *msg);
 # 38 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioPacket.nc"
@@ -3217,7 +3217,7 @@ error_t error);
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void Atm128SpiP__ResourceArbiter__granted(
 # 85 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9d068);
+uint8_t arg_0x40abc068);
 # 34 "/opt/tinyos-2.1.1/tos/interfaces/SpiByte.nc"
 static uint8_t Atm128SpiP__SpiByte__write(uint8_t tx);
 # 92 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128Spi.nc"
@@ -3233,23 +3233,23 @@ static uint8_t Atm128SpiP__FastSpiByte__write(uint8_t data);
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__release(
 # 81 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9f398);
+uint8_t arg_0x40a9a398);
 # 87 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__immediateRequest(
 # 81 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9f398);
+uint8_t arg_0x40a9a398);
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__request(
 # 81 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9f398);
+uint8_t arg_0x40a9a398);
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__default__granted(
 # 81 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9f398);
+uint8_t arg_0x40a9a398);
 # 118 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static bool Atm128SpiP__Resource__isOwner(
 # 81 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9f398);
+uint8_t arg_0x40a9a398);
 # 72 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128Spi.nc"
 static void HplAtm128SpiP__SPI__sleep(void );
 #line 66
@@ -3298,35 +3298,35 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__1__F
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__default__requested(
 # 52 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fbed8);
+uint8_t arg_0x406f6ed8);
 # 51 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__default__immediateRequested(
 # 52 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fbed8);
+uint8_t arg_0x406f6ed8);
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__default__unconfigure(
 # 56 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fab50);
+uint8_t arg_0x406f5b50);
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__default__configure(
 # 56 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fab50);
+uint8_t arg_0x406f5b50);
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__release(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 87 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__immediateRequest(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__request(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 118 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static bool /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__isOwner(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 80 "/opt/tinyos-2.1.1/tos/interfaces/ArbiterInfo.nc"
 static bool /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ArbiterInfo__inUse(void );
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
@@ -3458,15 +3458,15 @@ static resource_client_id_t /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Queue*/Roun
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(
 # 55 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c43230);
+uint8_t arg_0x40c3e230);
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(
 # 60 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c425e0);
+uint8_t arg_0x40c3d5e0);
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(
 # 60 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c425e0);
+uint8_t arg_0x40c3d5e0);
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void );
 
@@ -3481,11 +3481,11 @@ static bool /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resou
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resource__release(
 # 54 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c447d8);
+uint8_t arg_0x40c3f7d8);
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resource__request(
 # 54 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c447d8);
+uint8_t arg_0x40c3f7d8);
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__grantedTask__runTask(void );
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/SplitControl.nc"
@@ -3525,7 +3525,7 @@ static void /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 static error_t /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__Read__read(
 # 40 "/opt/tinyos-2.1.1/tos/sensorboards/mda100/SharedAnalogDeviceP.nc"
-uint8_t arg_0x40c788c8);
+uint8_t arg_0x40c738c8);
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__stopDone__runTask(void );
 # 66 "/opt/tinyos-2.1.1/tos/interfaces/ReadNow.nc"
@@ -3614,33 +3614,33 @@ static resource_client_id_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQue
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__default__requested(
 # 55 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c43230);
+uint8_t arg_0x40c3e230);
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__unconfigure(
 # 60 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c425e0);
+uint8_t arg_0x40c3d5e0);
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__configure(
 # 60 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c425e0);
+uint8_t arg_0x40c3d5e0);
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceDefaultOwner__release(void );
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__release(
 # 54 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c447d8);
+uint8_t arg_0x40c3f7d8);
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__request(
 # 54 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c447d8);
+uint8_t arg_0x40c3f7d8);
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__default__granted(
 # 54 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c447d8);
+uint8_t arg_0x40c3f7d8);
 # 118 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static bool /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__isOwner(
 # 54 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c447d8);
+uint8_t arg_0x40c3f7d8);
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__grantedTask__runTask(void );
 # 52 "/opt/tinyos-2.1.1/tos/lib/power/PowerDownCleanup.nc"
@@ -3652,25 +3652,25 @@ static void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefault
 # 58 "/opt/tinyos-2.1.1/tos/interfaces/ReadNow.nc"
 static error_t AdcP__ReadNow__read(
 # 49 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d184a8);
+uint8_t arg_0x40d134a8);
 # 66 "/opt/tinyos-2.1.1/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__default__readDone(
 # 49 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d184a8, 
+uint8_t arg_0x40d134a8, 
 # 66 "/opt/tinyos-2.1.1/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(
 # 53 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d179c0);
+uint8_t arg_0x40d129c0);
 # 25 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getChannel(
 # 53 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d179c0);
+uint8_t arg_0x40d129c0);
 # 39 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(
 # 53 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d179c0);
+uint8_t arg_0x40d129c0);
 # 72 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static void AdcP__Atm128AdcSingle__dataReady(uint16_t data, bool precise);
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
@@ -3678,19 +3678,19 @@ static void AdcP__acquiredData__runTask(void );
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(
 # 24 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2e448, 
+uint8_t arg_0x40d29448, 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 63
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(
 # 26 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2d480, 
+uint8_t arg_0x40d28480, 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__val_t val);
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(
 # 27 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2c358);
+uint8_t arg_0x40d27358);
 # 20 "/opt/tinyos-2.1.1/tos/platforms/mica/MicaBusAdc.nc"
 static uint8_t MicaBusP__Adc1__getChannel(void );
 # 32 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
@@ -3702,23 +3702,23 @@ static uint8_t PhotoTempConfigP__Atm128AdcConfig__getPrescaler(void );
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__read(
 # 24 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2e448);
+uint8_t arg_0x40d29448);
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 static void /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__default__readDone(
 # 24 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2e448, 
+uint8_t arg_0x40d29448, 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 error_t result, /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__val_t val);
 #line 63
 static void /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Service__readDone(
 # 26 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2d480, 
+uint8_t arg_0x40d28480, 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 error_t result, /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Service__val_t val);
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Resource__granted(
 # 27 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2c358);
+uint8_t arg_0x40d27358);
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 static void /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__SubSend__sendDone(
 #line 85
@@ -3747,7 +3747,7 @@ uint8_t len);
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 static error_t /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__send(
 # 36 "/opt/tinyos-2.1.1/tos/lib/serial/SerialActiveMessageP.nc"
-am_id_t arg_0x40d70ae8, 
+am_id_t arg_0x40d6cae8, 
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 60
@@ -3764,7 +3764,7 @@ uint8_t len);
 #line 99
 static void /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__default__sendDone(
 # 36 "/opt/tinyos-2.1.1/tos/lib/serial/SerialActiveMessageP.nc"
-am_id_t arg_0x40d70ae8, 
+am_id_t arg_0x40d6cae8, 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -3799,7 +3799,7 @@ message_t *
 
 /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__Receive__default__receive(
 # 37 "/opt/tinyos-2.1.1/tos/lib/serial/SerialActiveMessageP.nc"
-am_id_t arg_0x40d6d548, 
+am_id_t arg_0x40d68548, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3848,7 +3848,7 @@ static void /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__receive
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 static error_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Send__send(
 # 40 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e31010, 
+uart_id_t arg_0x40e2c010, 
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -3862,7 +3862,7 @@ uint8_t len);
 #line 89
 static void /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Send__default__sendDone(
 # 40 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e31010, 
+uart_id_t arg_0x40e2c010, 
 # 85 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -3880,7 +3880,7 @@ message_t *
 
 /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Receive__default__receive(
 # 39 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e35918, 
+uart_id_t arg_0x40e30918, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3893,17 +3893,17 @@ uint8_t len);
 # 31 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__upperLength(
 # 43 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e31b10, 
+uart_id_t arg_0x40e2cb10, 
 # 31 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
 message_t *msg, uint8_t dataLinkLen);
 #line 15
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__offset(
 # 43 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e31b10);
+uart_id_t arg_0x40e2cb10);
 # 23 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__dataLinkLength(
 # 43 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e31b10, 
+uart_id_t arg_0x40e2cb10, 
 # 23 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
 message_t *msg, uint8_t upperLen);
 # 70 "/opt/tinyos-2.1.1/tos/lib/serial/SendBytePacket.nc"
@@ -4126,7 +4126,7 @@ static void /*CtpP.Forwarder*/CtpForwardingEngineP__0__LinkEstimator__evicted(am
 # 31 "/opt/tinyos-2.1.1/tos/interfaces/Intercept.nc"
 static bool /*CtpP.Forwarder*/CtpForwardingEngineP__0__Intercept__default__forward(
 # 114 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x40fe7cb0, 
+collection_id_t arg_0x40fe2cb0, 
 # 20 "/opt/tinyos-2.1.1/tos/interfaces/Intercept.nc"
 message_t * msg, 
 
@@ -4177,7 +4177,7 @@ message_t *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP__0__Snoop__default__receive(
 # 113 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x40fe7608, 
+collection_id_t arg_0x40fe2608, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4190,7 +4190,7 @@ uint8_t len);
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 static error_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__send(
 # 111 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x40fe84b8, 
+uint8_t arg_0x40fe34b8, 
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4208,7 +4208,7 @@ void *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__getPayload(
 # 111 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x40fe84b8, 
+uint8_t arg_0x40fe34b8, 
 # 111 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4217,11 +4217,11 @@ uint8_t len);
 #line 101
 static uint8_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__maxPayloadLength(
 # 111 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x40fe84b8);
+uint8_t arg_0x40fe34b8);
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 static void /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__default__sendDone(
 # 111 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x40fe84b8, 
+uint8_t arg_0x40fe34b8, 
 # 85 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4247,7 +4247,7 @@ message_t *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP__0__Receive__default__receive(
 # 112 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x40fe8ec8, 
+collection_id_t arg_0x40fe3ec8, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4334,7 +4334,7 @@ uint8_t len);
 # 46 "/opt/tinyos-2.1.1/tos/lib/net/CollectionId.nc"
 static collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__CollectionId__default__fetch(
 # 146 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x41003a10);
+uint8_t arg_0x40ffea10);
 # 97 "/opt/tinyos-2.1.1/tos/interfaces/Pool.nc"
 static 
 #line 94
@@ -4538,7 +4538,7 @@ error_t error);
 # 99 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(
 # 40 "/opt/tinyos-2.1.1/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x41174c40, 
+am_id_t arg_0x4116fc40, 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4551,7 +4551,7 @@ error_t error);
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__send(
 # 38 "/opt/tinyos-2.1.1/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x41174258, 
+uint8_t arg_0x4116f258, 
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4565,11 +4565,11 @@ uint8_t len);
 #line 101
 static uint8_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__maxPayloadLength(
 # 38 "/opt/tinyos-2.1.1/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x41174258);
+uint8_t arg_0x4116f258);
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(
 # 38 "/opt/tinyos-2.1.1/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x41174258, 
+uint8_t arg_0x4116f258, 
 # 85 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4680,15 +4680,15 @@ message_t * msg,
 
 error_t error);
 # 46 "/opt/tinyos-2.1.1/tos/lib/net/CollectionId.nc"
-static collection_id_t /*EasyCollectionWithSerialAppC.CollectionSenderC.CollectionSenderP.CollectionIdP*/CollectionIdP__0__CollectionId__fetch(void );
+static collection_id_t /*DataAggregationAppC.CollectionSenderC.CollectionSenderP.CollectionIdP*/CollectionIdP__0__CollectionId__fetch(void );
 # 41 "/opt/tinyos-2.1.1/tos/lib/net/RootControl.nc"
-static error_t EasyCollectionWithSerialC__RootControl__setRoot(void );
+static error_t DataAggregationC__RootControl__setRoot(void );
 # 83 "/opt/tinyos-2.1.1/tos/interfaces/SplitControl.nc"
-static error_t EasyCollectionWithSerialC__SerialControl__start(void );
+static error_t DataAggregationC__SerialControl__start(void );
 #line 83
-static error_t EasyCollectionWithSerialC__RadioControl__start(void );
+static error_t DataAggregationC__RadioControl__start(void );
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
-static error_t EasyCollectionWithSerialC__Send__send(
+static error_t DataAggregationC__Send__send(
 #line 56
 message_t * msg, 
 
@@ -4704,14 +4704,14 @@ static
 #line 112
 void * 
 
-EasyCollectionWithSerialC__Send__getPayload(
+DataAggregationC__Send__getPayload(
 #line 111
 message_t * msg, 
 
 
 uint8_t len);
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
-static error_t EasyCollectionWithSerialC__AMSend__send(am_addr_t addr, 
+static error_t DataAggregationC__AMSend__send(am_addr_t addr, 
 #line 60
 message_t * msg, 
 
@@ -4729,7 +4729,7 @@ static
 void * 
 
 
-EasyCollectionWithSerialC__Packet__getPayload(
+DataAggregationC__Packet__getPayload(
 #line 110
 message_t * msg, 
 
@@ -4738,57 +4738,52 @@ message_t * msg,
 
 uint8_t len);
 # 74 "/opt/tinyos-2.1.1/tos/interfaces/StdControl.nc"
-static error_t EasyCollectionWithSerialC__RoutingControl__start(void );
+static error_t DataAggregationC__RoutingControl__start(void );
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/Leds.nc"
-static void EasyCollectionWithSerialC__Leds__led0Toggle(void );
+static void DataAggregationC__Leds__led0Toggle(void );
 #line 72
-static void EasyCollectionWithSerialC__Leds__led1Toggle(void );
+static void DataAggregationC__Leds__led1Toggle(void );
 #line 89
-static void EasyCollectionWithSerialC__Leds__led2Toggle(void );
+static void DataAggregationC__Leds__led2Toggle(void );
 #line 83
-static void EasyCollectionWithSerialC__Leds__led2Off(void );
+static void DataAggregationC__Leds__led2Off(void );
 #line 78
-static void EasyCollectionWithSerialC__Leds__led2On(void );
+static void DataAggregationC__Leds__led2On(void );
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
-static error_t EasyCollectionWithSerialC__Read__read(void );
+static error_t DataAggregationC__Read__read(void );
 # 53 "/opt/tinyos-2.1.1/tos/lib/timer/Timer.nc"
-static void EasyCollectionWithSerialC__Timer__startPeriodic(uint32_t dt);
-# 20 "EasyCollectionWithSerialC.nc"
-message_t EasyCollectionWithSerialC__packet;
-bool EasyCollectionWithSerialC__sendBusy = FALSE;
-bool EasyCollectionWithSerialC__locked = FALSE;
+static void DataAggregationC__Timer__startPeriodic(uint32_t dt);
+# 20 "DataAggregationC.nc"
+message_t DataAggregationC__packet;
+bool DataAggregationC__sendBusy = FALSE;
+bool DataAggregationC__locked = FALSE;
+
+
+uint16_t DataAggregationC__MAXdata = 0;
+uint16_t DataAggregationC__MINdata = 0;
+uint16_t DataAggregationC__AVGdata = 0;
+uint16_t DataAggregationC__maxID = 0;
+uint16_t DataAggregationC__minID = 0;
+uint16_t DataAggregationC__numReadings = 0;
+uint16_t DataAggregationC__totalForAverage = 0;
 
 
 
 
 
-#line 25
-typedef nx_struct EasyCollectionWithSerialC__EasyCollectionWithSerialMsg {
+#line 34
+typedef nx_struct DataAggregationC__DataAggregationMsg {
   nx_uint16_t data;
   nx_uint16_t nodeid;
-} __attribute__((packed)) EasyCollectionWithSerialC__EasyCollectionWithSerialMsg;
+} __attribute__((packed)) DataAggregationC__DataAggregationMsg;
 
 
 
-static inline void EasyCollectionWithSerialC__Boot__booted(void );
+static inline void DataAggregationC__Boot__booted(void );
 
 
 
-static inline void EasyCollectionWithSerialC__SerialControl__startDone(error_t err);
-
-
-
-
-
-
-
-static inline void EasyCollectionWithSerialC__SerialControl__stopDone(error_t err);
-
-static inline void EasyCollectionWithSerialC__RadioControl__startDone(error_t err);
-#line 63
-static inline void EasyCollectionWithSerialC__RadioControl__stopDone(error_t err);
-
-static inline void EasyCollectionWithSerialC__sendMessage(uint16_t val);
+static inline void DataAggregationC__SerialControl__startDone(error_t err);
 
 
 
@@ -4796,10 +4791,13 @@ static inline void EasyCollectionWithSerialC__sendMessage(uint16_t val);
 
 
 
+static inline void DataAggregationC__SerialControl__stopDone(error_t err);
 
+static inline void DataAggregationC__RadioControl__startDone(error_t err);
+#line 72
+static inline void DataAggregationC__RadioControl__stopDone(error_t err);
 
-
-static inline void EasyCollectionWithSerialC__Read__readDone(error_t err, uint16_t val);
+static inline void DataAggregationC__sendMessage(uint16_t val);
 
 
 
@@ -4808,22 +4806,9 @@ static inline void EasyCollectionWithSerialC__Read__readDone(error_t err, uint16
 
 
 
-static inline void EasyCollectionWithSerialC__Timer__fired(void );
 
 
-
-
-
-
-static inline void EasyCollectionWithSerialC__AMSend__sendDone(message_t *bufPtr, error_t error);
-
-
-
-
-
-
-
-static inline void EasyCollectionWithSerialC__Send__sendDone(message_t *m, error_t err);
+static inline void DataAggregationC__Read__readDone(error_t err, uint16_t val);
 
 
 
@@ -4831,7 +4816,32 @@ static inline void EasyCollectionWithSerialC__Send__sendDone(message_t *m, error
 
 
 
-static message_t *EasyCollectionWithSerialC__Receive__receive(message_t *msg, void *payload, uint8_t len);
+
+static inline void DataAggregationC__Timer__fired(void );
+
+
+
+
+
+
+static inline void DataAggregationC__AMSend__sendDone(message_t *bufPtr, error_t error);
+
+
+
+
+
+
+
+static inline void DataAggregationC__Send__sendDone(message_t *m, error_t err);
+
+
+
+
+
+
+static inline void DataAggregationC__doMathsStuff(uint16_t data, uint16_t nodeID);
+#line 134
+static message_t *DataAggregationC__Receive__receive(message_t *msg, void *payload, uint8_t len);
 # 51 "/opt/tinyos-2.1.1/tos/interfaces/Init.nc"
 static error_t PlatformP__MoteInit__init(void );
 #line 51
@@ -5265,7 +5275,7 @@ static inline void RF230RadioP__RadioAlarm__fired(void );
 # 48 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarm.nc"
 static void RadioAlarmP__RadioAlarm__fired(
 # 31 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarmP.nc"
-uint8_t arg_0x406631b8);
+uint8_t arg_0x406701b8);
 # 98 "/opt/tinyos-2.1.1/tos/lib/timer/Alarm.nc"
 static RadioAlarmP__Alarm__size_type RadioAlarmP__Alarm__getNow(void );
 #line 55
@@ -5354,7 +5364,7 @@ static error_t ActiveMessageLayerP__SubSend__send(message_t *msg);
 # 59 "/opt/tinyos-2.1.1/tos/interfaces/SendNotifier.nc"
 static void ActiveMessageLayerP__SendNotifier__aboutToSend(
 # 36 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/ActiveMessageLayerP.nc"
-am_id_t arg_0x4068a3c0, 
+am_id_t arg_0x406853c0, 
 # 59 "/opt/tinyos-2.1.1/tos/interfaces/SendNotifier.nc"
 am_addr_t dest, 
 #line 57
@@ -5362,7 +5372,7 @@ message_t * msg);
 # 99 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 static void ActiveMessageLayerP__AMSend__sendDone(
 # 33 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/ActiveMessageLayerP.nc"
-am_id_t arg_0x4068cc18, 
+am_id_t arg_0x40687c18, 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -5381,7 +5391,7 @@ message_t *
 
 ActiveMessageLayerP__Snoop__receive(
 # 35 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/ActiveMessageLayerP.nc"
-am_id_t arg_0x4068bcc0, 
+am_id_t arg_0x40686cc0, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -5416,7 +5426,7 @@ message_t *
 
 ActiveMessageLayerP__Receive__receive(
 # 34 "/opt/tinyos-2.1.1/tos/chips/rf2xx/layers/ActiveMessageLayerP.nc"
-am_id_t arg_0x4068b628, 
+am_id_t arg_0x40686628, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -5664,19 +5674,19 @@ static inline error_t /*RF230RadioC.SendResourceC.Queue*/FcfsResourceQueueC__0__
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(
 # 52 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fbed8);
+uint8_t arg_0x406f6ed8);
 # 51 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__immediateRequested(
 # 52 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fbed8);
+uint8_t arg_0x406f6ed8);
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(
 # 56 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fab50);
+uint8_t arg_0x406f5b50);
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(
 # 56 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fab50);
+uint8_t arg_0x406f5b50);
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/ResourceQueue.nc"
 static error_t /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 43
@@ -5686,7 +5696,7 @@ static resource_client_id_t /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP_
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resource__granted(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
 static error_t /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__grantedTask__postTask(void );
 # 69 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
@@ -6438,7 +6448,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 37 "/opt/tinyos-2.1.1/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x408c3708);
+uint8_t arg_0x408da708);
 #line 60
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4371 {
 #line 60
@@ -7322,19 +7332,19 @@ error_t error);
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__release(
 # 85 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9d068);
+uint8_t arg_0x40abc068);
 # 87 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__immediateRequest(
 # 85 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9d068);
+uint8_t arg_0x40abc068);
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__request(
 # 85 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9d068);
+uint8_t arg_0x40abc068);
 # 118 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static bool Atm128SpiP__ResourceArbiter__isOwner(
 # 85 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9d068);
+uint8_t arg_0x40abc068);
 # 72 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128Spi.nc"
 static void Atm128SpiP__Spi__sleep(void );
 #line 66
@@ -7358,7 +7368,7 @@ static void Atm128SpiP__Spi__setClockPhase(bool sampleOnTrailing);
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__granted(
 # 81 "/opt/tinyos-2.1.1/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x40a9f398);
+uint8_t arg_0x40a9a398);
 # 80 "/opt/tinyos-2.1.1/tos/interfaces/ArbiterInfo.nc"
 static bool Atm128SpiP__ArbiterInfo__inUse(void );
 # 44 "/opt/tinyos-2.1.1/tos/interfaces/McuPowerState.nc"
@@ -7533,19 +7543,19 @@ static inline error_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__1__FcfsQue
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__requested(
 # 52 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fbed8);
+uint8_t arg_0x406f6ed8);
 # 51 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__immediateRequested(
 # 52 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fbed8);
+uint8_t arg_0x406f6ed8);
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__unconfigure(
 # 56 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fab50);
+uint8_t arg_0x406f5b50);
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__configure(
 # 56 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fab50);
+uint8_t arg_0x406f5b50);
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Queue__enqueue(resource_client_id_t id);
 #line 43
@@ -7555,7 +7565,7 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Que
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__granted(
 # 51 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x406fb4b0);
+uint8_t arg_0x406f64b0);
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__grantedTask__postTask(void );
 # 69 "/opt/tinyos-2.1.1/tos/system/SimpleArbiterP.nc"
@@ -7883,15 +7893,15 @@ static inline error_t /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Queue*/RoundRobin
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(
 # 55 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c43230);
+uint8_t arg_0x40c3e230);
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(
 # 60 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c425e0);
+uint8_t arg_0x40c3d5e0);
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(
 # 60 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c425e0);
+uint8_t arg_0x40c3d5e0);
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/ResourceQueue.nc"
 static error_t /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 43
@@ -7905,7 +7915,7 @@ static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resou
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resource__granted(
 # 54 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c447d8);
+uint8_t arg_0x40c3f7d8);
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
 static error_t /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void );
 # 75 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
@@ -8090,7 +8100,7 @@ static error_t /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDevice
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 static void /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__Read__readDone(
 # 40 "/opt/tinyos-2.1.1/tos/sensorboards/mda100/SharedAnalogDeviceP.nc"
-uint8_t arg_0x40c788c8, 
+uint8_t arg_0x40c738c8, 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 error_t result, /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__Read__val_t val);
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
@@ -8313,15 +8323,15 @@ static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__1
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__requested(
 # 55 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c43230);
+uint8_t arg_0x40c3e230);
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__unconfigure(
 # 60 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c425e0);
+uint8_t arg_0x40c3d5e0);
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__configure(
 # 60 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c425e0);
+uint8_t arg_0x40c3d5e0);
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Queue__enqueue(resource_client_id_t id);
 #line 43
@@ -8335,7 +8345,7 @@ static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceDefaultOwner__
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__granted(
 # 54 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
-uint8_t arg_0x40c447d8);
+uint8_t arg_0x40c3f7d8);
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__grantedTask__postTask(void );
 # 75 "/opt/tinyos-2.1.1/tos/system/ArbiterP.nc"
@@ -8419,27 +8429,27 @@ static inline void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__PowerDow
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 static void AdcP__Read__readDone(
 # 48 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d19508, 
+uint8_t arg_0x40d14508, 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 error_t result, AdcP__Read__val_t val);
 # 66 "/opt/tinyos-2.1.1/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__readDone(
 # 49 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d184a8, 
+uint8_t arg_0x40d134a8, 
 # 66 "/opt/tinyos-2.1.1/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(
 # 53 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d179c0);
+uint8_t arg_0x40d129c0);
 # 25 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getChannel(
 # 53 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d179c0);
+uint8_t arg_0x40d129c0);
 # 39 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getPrescaler(
 # 53 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x40d179c0);
+uint8_t arg_0x40d129c0);
 # 61 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static bool AdcP__Atm128AdcSingle__getData(uint8_t channel, uint8_t refVoltage, 
 bool leftJustify, uint8_t prescaler);
@@ -8512,13 +8522,13 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 # 24 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2e448, 
+uint8_t arg_0x40d29448, 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(
 # 27 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2c358);
+uint8_t arg_0x40d27358);
 #line 39
 static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(uint8_t client, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__width_t data);
 
@@ -8547,21 +8557,21 @@ static inline uint8_t PhotoTempConfigP__Atm128AdcConfig__getPrescaler(void );
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 static void /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__readDone(
 # 24 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2e448, 
+uint8_t arg_0x40d29448, 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
 error_t result, /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__val_t val);
 #line 55
 static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Service__read(
 # 26 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2d480);
+uint8_t arg_0x40d28480);
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Resource__release(
 # 27 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2c358);
+uint8_t arg_0x40d27358);
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
 static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Resource__request(
 # 27 "/opt/tinyos-2.1.1/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x40d2c358);
+uint8_t arg_0x40d27358);
 
 
 
@@ -8598,7 +8608,7 @@ uint8_t len);
 # 99 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 static void /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__sendDone(
 # 36 "/opt/tinyos-2.1.1/tos/lib/serial/SerialActiveMessageP.nc"
-am_id_t arg_0x40d70ae8, 
+am_id_t arg_0x40d6cae8, 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -8617,7 +8627,7 @@ message_t *
 
 /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__Receive__receive(
 # 37 "/opt/tinyos-2.1.1/tos/lib/serial/SerialActiveMessageP.nc"
-am_id_t arg_0x40d6d548, 
+am_id_t arg_0x40d68548, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -9057,7 +9067,7 @@ static error_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__rece
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 static void /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Send__sendDone(
 # 40 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e31010, 
+uart_id_t arg_0x40e2c010, 
 # 85 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -9075,7 +9085,7 @@ message_t *
 
 /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Receive__receive(
 # 39 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e35918, 
+uart_id_t arg_0x40e30918, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -9088,17 +9098,17 @@ uint8_t len);
 # 31 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__upperLength(
 # 43 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e31b10, 
+uart_id_t arg_0x40e2cb10, 
 # 31 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
 message_t *msg, uint8_t dataLinkLen);
 #line 15
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__offset(
 # 43 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e31b10);
+uart_id_t arg_0x40e2cb10);
 # 23 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__dataLinkLength(
 # 43 "/opt/tinyos-2.1.1/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40e31b10, 
+uart_id_t arg_0x40e2cb10, 
 # 23 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
 message_t *msg, uint8_t upperLen);
 # 60 "/opt/tinyos-2.1.1/tos/lib/serial/SendBytePacket.nc"
@@ -9628,7 +9638,7 @@ static bool /*CtpP.Forwarder*/CtpForwardingEngineP__0__SentCache__lookup(/*CtpP.
 # 31 "/opt/tinyos-2.1.1/tos/interfaces/Intercept.nc"
 static bool /*CtpP.Forwarder*/CtpForwardingEngineP__0__Intercept__forward(
 # 114 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x40fe7cb0, 
+collection_id_t arg_0x40fe2cb0, 
 # 20 "/opt/tinyos-2.1.1/tos/interfaces/Intercept.nc"
 message_t * msg, 
 
@@ -9651,7 +9661,7 @@ message_t *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP__0__Snoop__receive(
 # 113 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x40fe7608, 
+collection_id_t arg_0x40fe2608, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -9666,7 +9676,7 @@ static uint16_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__Random__rand16(void )
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 static void /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__sendDone(
 # 111 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x40fe84b8, 
+uint8_t arg_0x40fe34b8, 
 # 85 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -9766,7 +9776,7 @@ message_t *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP__0__Receive__receive(
 # 112 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x40fe8ec8, 
+collection_id_t arg_0x40fe3ec8, 
 # 60 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -9835,7 +9845,7 @@ static error_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__MessagePool__put(
 # 46 "/opt/tinyos-2.1.1/tos/lib/net/CollectionId.nc"
 static collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__CollectionId__fetch(
 # 146 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x41003a10);
+uint8_t arg_0x40ffea10);
 #line 240
 enum /*CtpP.Forwarder*/CtpForwardingEngineP__0____nesc_unnamed4429 {
 #line 240
@@ -10520,7 +10530,7 @@ static inline uint8_t /*CtpP.AMSenderC.SenderC.AMQueueEntryP*/AMQueueEntryP__0__
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(
 # 40 "/opt/tinyos-2.1.1/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x41174c40, 
+am_id_t arg_0x4116fc40, 
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 60
@@ -10537,11 +10547,11 @@ uint8_t len);
 #line 112
 static uint8_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__maxPayloadLength(
 # 40 "/opt/tinyos-2.1.1/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x41174c40);
+am_id_t arg_0x4116fc40);
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(
 # 38 "/opt/tinyos-2.1.1/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x41174258, 
+uint8_t arg_0x4116f258, 
 # 85 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -10741,8 +10751,8 @@ uint32_t /*CtpP.Router*/CtpRoutingEngineP__0__parentChanges;
 
 
 static inline void /*CtpP.Router*/CtpRoutingEngineP__0__routingTableInit(void );
-static uint8_t /*CtpP.Router*/CtpRoutingEngineP__0__routingTableFind(am_addr_t arg_0x411d8dd0);
-static inline error_t /*CtpP.Router*/CtpRoutingEngineP__0__routingTableUpdateEntry(am_addr_t arg_0x411d7388, am_addr_t arg_0x411d7540, uint16_t arg_0x411d76f0);
+static uint8_t /*CtpP.Router*/CtpRoutingEngineP__0__routingTableFind(am_addr_t arg_0x411d4dd0);
+static inline error_t /*CtpP.Router*/CtpRoutingEngineP__0__routingTableUpdateEntry(am_addr_t arg_0x411d3388, am_addr_t arg_0x411d3540, uint16_t arg_0x411d36f0);
 static inline error_t /*CtpP.Router*/CtpRoutingEngineP__0__routingTableEvict(am_addr_t neighbor);
 
 uint32_t /*CtpP.Router*/CtpRoutingEngineP__0__currentInterval = 128;
@@ -10941,7 +10951,7 @@ uint8_t len);
 
 static inline void /*CtpP.SendControl.SenderC.AMQueueEntryP*/AMQueueEntryP__1__Send__sendDone(message_t *m, error_t err);
 # 50 "/opt/tinyos-2.1.1/tos/lib/net/CollectionIdP.nc"
-static inline collection_id_t /*EasyCollectionWithSerialAppC.CollectionSenderC.CollectionSenderP.CollectionIdP*/CollectionIdP__0__CollectionId__fetch(void );
+static inline collection_id_t /*DataAggregationAppC.CollectionSenderC.CollectionSenderP.CollectionIdP*/CollectionIdP__0__CollectionId__fetch(void );
 # 109 "/opt/tinyos-2.1.1/tos/chips/atm1281/atm128hardware.h"
 static __inline  void __nesc_disable_interrupt()
 #line 109
@@ -12945,9 +12955,9 @@ static inline void ActiveMessageLayerP__SendNotifier__default__aboutToSend(am_id
 }
 
 # 59 "/opt/tinyos-2.1.1/tos/interfaces/SendNotifier.nc"
-inline static void ActiveMessageLayerP__SendNotifier__aboutToSend(am_id_t arg_0x4068a3c0, am_addr_t dest, message_t * msg){
+inline static void ActiveMessageLayerP__SendNotifier__aboutToSend(am_id_t arg_0x406853c0, am_addr_t dest, message_t * msg){
 #line 59
-    ActiveMessageLayerP__SendNotifier__default__aboutToSend(arg_0x4068a3c0, dest, msg);
+    ActiveMessageLayerP__SendNotifier__default__aboutToSend(arg_0x406853c0, dest, msg);
 #line 59
 }
 #line 59
@@ -13042,9 +13052,9 @@ static inline void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resou
 }
 
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
-inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x406fbed8){
+inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x406f6ed8){
 #line 43
-    /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x406fbed8);
+    /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x406f6ed8);
 #line 43
 }
 #line 43
@@ -13143,9 +13153,9 @@ static inline void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resou
 }
 
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
-inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x406fab50){
+inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x406f5b50){
 #line 49
-    /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x406fab50);
+    /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x406f5b50);
 #line 49
 }
 #line 49
@@ -13156,9 +13166,9 @@ static inline void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resou
 }
 
 # 51 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
-inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__immediateRequested(uint8_t arg_0x406fbed8){
+inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__immediateRequested(uint8_t arg_0x406f6ed8){
 #line 51
-    /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__immediateRequested(arg_0x406fbed8);
+    /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__immediateRequested(arg_0x406f6ed8);
 #line 51
 }
 #line 51
@@ -13601,9 +13611,9 @@ static inline void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resou
 }
 
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
-inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x406fab50){
+inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x406f5b50){
 #line 55
-    /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x406fab50);
+    /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x406f5b50);
 #line 55
 }
 #line 55
@@ -13667,9 +13677,9 @@ static inline void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__send
 }
 
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
-inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint8_t arg_0x41174258, message_t * msg, error_t error){
+inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint8_t arg_0x4116f258, message_t * msg, error_t error){
 #line 89
-  switch (arg_0x41174258) {
+  switch (arg_0x4116f258) {
 #line 89
     case 0U:
 #line 89
@@ -13685,7 +13695,7 @@ inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint
 #line 89
     default:
 #line 89
-      /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(arg_0x41174258, msg, error);
+      /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(arg_0x4116f258, msg, error);
 #line 89
       break;
 #line 89
@@ -13875,21 +13885,21 @@ static inline void LedsP__Leds__led0Toggle(void )
 }
 
 # 56 "/opt/tinyos-2.1.1/tos/interfaces/Leds.nc"
-inline static void EasyCollectionWithSerialC__Leds__led0Toggle(void ){
+inline static void DataAggregationC__Leds__led0Toggle(void ){
 #line 56
   LedsP__Leds__led0Toggle();
 #line 56
 }
 #line 56
-# 100 "EasyCollectionWithSerialC.nc"
-static inline void EasyCollectionWithSerialC__Send__sendDone(message_t *m, error_t err)
-#line 100
+# 109 "DataAggregationC.nc"
+static inline void DataAggregationC__Send__sendDone(message_t *m, error_t err)
+#line 109
 {
   if (err != SUCCESS) {
-    EasyCollectionWithSerialC__Leds__led0Toggle();
+    DataAggregationC__Leds__led0Toggle();
     }
-#line 103
-  EasyCollectionWithSerialC__sendBusy = FALSE;
+#line 112
+  DataAggregationC__sendBusy = FALSE;
 }
 
 # 856 "/opt/tinyos-2.1.1/tos/lib/net/ctp/CtpForwardingEngineP.nc"
@@ -13902,19 +13912,19 @@ void
 }
 
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
-inline static void /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__sendDone(uint8_t arg_0x40fe84b8, message_t * msg, error_t error){
+inline static void /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__sendDone(uint8_t arg_0x40fe34b8, message_t * msg, error_t error){
 #line 89
-  switch (arg_0x40fe84b8) {
+  switch (arg_0x40fe34b8) {
 #line 89
     case 0U:
 #line 89
-      EasyCollectionWithSerialC__Send__sendDone(msg, error);
+      DataAggregationC__Send__sendDone(msg, error);
 #line 89
       break;
 #line 89
     default:
 #line 89
-      /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__default__sendDone(arg_0x40fe84b8, msg, error);
+      /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__default__sendDone(arg_0x40fe34b8, msg, error);
 #line 89
       break;
 #line 89
@@ -14104,13 +14114,13 @@ inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__errorTask__postT
 }
 #line 56
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
-inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(am_id_t arg_0x41174c40, am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(am_id_t arg_0x4116fc40, am_addr_t addr, message_t * msg, uint8_t len){
 #line 69
   unsigned char __nesc_result;
 #line 69
 
 #line 69
-  __nesc_result = ActiveMessageLayerP__AMSend__send(arg_0x41174c40, addr, msg, len);
+  __nesc_result = ActiveMessageLayerP__AMSend__send(arg_0x4116fc40, addr, msg, len);
 #line 69
 
 #line 69
@@ -14596,23 +14606,23 @@ uint8_t len)
 }
 
 # 67 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
-inline static message_t * /*CtpP.Forwarder*/CtpForwardingEngineP__0__Receive__receive(collection_id_t arg_0x40fe8ec8, message_t * msg, void * payload, uint8_t len){
+inline static message_t * /*CtpP.Forwarder*/CtpForwardingEngineP__0__Receive__receive(collection_id_t arg_0x40fe3ec8, message_t * msg, void * payload, uint8_t len){
 #line 67
   nx_struct message_t *__nesc_result;
 #line 67
 
 #line 67
-  switch (arg_0x40fe8ec8) {
+  switch (arg_0x40fe3ec8) {
 #line 67
     case 0xee:
 #line 67
-      __nesc_result = EasyCollectionWithSerialC__Receive__receive(msg, payload, len);
+      __nesc_result = DataAggregationC__Receive__receive(msg, payload, len);
 #line 67
       break;
 #line 67
     default:
 #line 67
-      __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP__0__Receive__default__receive(arg_0x40fe8ec8, msg, payload, len);
+      __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP__0__Receive__default__receive(arg_0x40fe3ec8, msg, payload, len);
 #line 67
       break;
 #line 67
@@ -14935,7 +14945,7 @@ static inline void /*CtpP.Forwarder*/CtpForwardingEngineP__0__sendTask__runTask(
 }
 
 # 115 "/opt/tinyos-2.1.1/tos/interfaces/Packet.nc"
-inline static void * EasyCollectionWithSerialC__Packet__getPayload(message_t * msg, uint8_t len){
+inline static void * DataAggregationC__Packet__getPayload(message_t * msg, uint8_t len){
 #line 115
   void *__nesc_result;
 #line 115
@@ -14949,6 +14959,24 @@ inline static void * EasyCollectionWithSerialC__Packet__getPayload(message_t * m
 #line 115
 }
 #line 115
+# 116 "DataAggregationC.nc"
+static inline void DataAggregationC__doMathsStuff(uint16_t data, uint16_t nodeID)
+{
+  DataAggregationC__numReadings++;
+  if (data > DataAggregationC__MAXdata) 
+    {
+      DataAggregationC__MAXdata = data;
+      DataAggregationC__maxID = nodeID;
+    }
+  if (data < DataAggregationC__MINdata) 
+    {
+      DataAggregationC__MINdata = data;
+      DataAggregationC__minID = nodeID;
+    }
+  DataAggregationC__totalForAverage += data;
+  DataAggregationC__AVGdata = DataAggregationC__totalForAverage / DataAggregationC__numReadings;
+}
+
 # 522 "/opt/tinyos-2.1.1/tos/lib/serial/SerialP.nc"
 static inline error_t SerialP__SendBytePacket__startSend(uint8_t b)
 #line 522
@@ -15005,13 +15033,13 @@ uint8_t upperLen)
 }
 
 # 23 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
-inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__dataLinkLength(uart_id_t arg_0x40e31b10, message_t *msg, uint8_t upperLen){
+inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__dataLinkLength(uart_id_t arg_0x40e2cb10, message_t *msg, uint8_t upperLen){
 #line 23
   unsigned char __nesc_result;
 #line 23
 
 #line 23
-  switch (arg_0x40e31b10) {
+  switch (arg_0x40e2cb10) {
 #line 23
     case TOS_SERIAL_ACTIVE_MESSAGE_ID:
 #line 23
@@ -15021,7 +15049,7 @@ inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__
 #line 23
     default:
 #line 23
-      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__dataLinkLength(arg_0x40e31b10, msg, upperLen);
+      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__dataLinkLength(arg_0x40e2cb10, msg, upperLen);
 #line 23
       break;
 #line 23
@@ -15048,13 +15076,13 @@ static inline uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__
 }
 
 # 15 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
-inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__offset(uart_id_t arg_0x40e31b10){
+inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__offset(uart_id_t arg_0x40e2cb10){
 #line 15
   unsigned char __nesc_result;
 #line 15
 
 #line 15
-  switch (arg_0x40e31b10) {
+  switch (arg_0x40e2cb10) {
 #line 15
     case TOS_SERIAL_ACTIVE_MESSAGE_ID:
 #line 15
@@ -15064,7 +15092,7 @@ inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__
 #line 15
     default:
 #line 15
-      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__offset(arg_0x40e31b10);
+      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__offset(arg_0x40e2cb10);
 #line 15
       break;
 #line 15
@@ -15184,7 +15212,7 @@ uint8_t len)
 }
 
 # 69 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
-inline static error_t EasyCollectionWithSerialC__AMSend__send(am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t DataAggregationC__AMSend__send(am_addr_t addr, message_t * msg, uint8_t len){
 #line 69
   unsigned char __nesc_result;
 #line 69
@@ -15239,7 +15267,7 @@ static inline void LedsP__Leds__led2On(void )
 }
 
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Leds.nc"
-inline static void EasyCollectionWithSerialC__Leds__led2On(void ){
+inline static void DataAggregationC__Leds__led2On(void ){
 #line 78
   LedsP__Leds__led2On();
 #line 78
@@ -15275,7 +15303,7 @@ static inline void LedsP__Leds__led1Toggle(void )
 }
 
 # 72 "/opt/tinyos-2.1.1/tos/interfaces/Leds.nc"
-inline static void EasyCollectionWithSerialC__Leds__led1Toggle(void ){
+inline static void DataAggregationC__Leds__led1Toggle(void ){
 #line 72
   LedsP__Leds__led1Toggle();
 #line 72
@@ -15292,20 +15320,20 @@ static inline void LedsP__Leds__led2Off(void )
 }
 
 # 83 "/opt/tinyos-2.1.1/tos/interfaces/Leds.nc"
-inline static void EasyCollectionWithSerialC__Leds__led2Off(void ){
+inline static void DataAggregationC__Leds__led2Off(void ){
 #line 83
   LedsP__Leds__led2Off();
 #line 83
 }
 #line 83
-# 92 "EasyCollectionWithSerialC.nc"
-static inline void EasyCollectionWithSerialC__AMSend__sendDone(message_t *bufPtr, error_t error)
-#line 92
+# 101 "DataAggregationC.nc"
+static inline void DataAggregationC__AMSend__sendDone(message_t *bufPtr, error_t error)
+#line 101
 {
-  EasyCollectionWithSerialC__Leds__led2Off();
-  if (&EasyCollectionWithSerialC__packet == bufPtr) {
-      EasyCollectionWithSerialC__Leds__led1Toggle();
-      EasyCollectionWithSerialC__locked = FALSE;
+  DataAggregationC__Leds__led2Off();
+  if (&DataAggregationC__packet == bufPtr) {
+      DataAggregationC__Leds__led1Toggle();
+      DataAggregationC__locked = FALSE;
     }
 }
 
@@ -15317,19 +15345,19 @@ static inline void /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__d
 }
 
 # 99 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
-inline static void /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__sendDone(am_id_t arg_0x40d70ae8, message_t * msg, error_t error){
+inline static void /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__sendDone(am_id_t arg_0x40d6cae8, message_t * msg, error_t error){
 #line 99
-  switch (arg_0x40d70ae8) {
+  switch (arg_0x40d6cae8) {
 #line 99
     case AM_TEST_SERIAL_MSG:
 #line 99
-      EasyCollectionWithSerialC__AMSend__sendDone(msg, error);
+      DataAggregationC__AMSend__sendDone(msg, error);
 #line 99
       break;
 #line 99
     default:
 #line 99
-      /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__default__sendDone(arg_0x40d70ae8, msg, error);
+      /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__default__sendDone(arg_0x40d6cae8, msg, error);
 #line 99
       break;
 #line 99
@@ -15352,9 +15380,9 @@ static inline void /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__
 }
 
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
-inline static void /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Send__sendDone(uart_id_t arg_0x40e31010, message_t * msg, error_t error){
+inline static void /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Send__sendDone(uart_id_t arg_0x40e2c010, message_t * msg, error_t error){
 #line 89
-  switch (arg_0x40e31010) {
+  switch (arg_0x40e2c010) {
 #line 89
     case TOS_SERIAL_ACTIVE_MESSAGE_ID:
 #line 89
@@ -15364,7 +15392,7 @@ inline static void /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__
 #line 89
     default:
 #line 89
-      /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Send__default__sendDone(arg_0x40e31010, msg, error);
+      /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Send__default__sendDone(arg_0x40e2c010, msg, error);
 #line 89
       break;
 #line 89
@@ -15413,13 +15441,13 @@ static inline message_t */*SerialActiveMessageC.AM*/SerialActiveMessageP__0__Rec
 }
 
 # 67 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
-inline static message_t * /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__Receive__receive(am_id_t arg_0x40d6d548, message_t * msg, void * payload, uint8_t len){
+inline static message_t * /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__Receive__receive(am_id_t arg_0x40d68548, message_t * msg, void * payload, uint8_t len){
 #line 67
   nx_struct message_t *__nesc_result;
 #line 67
 
 #line 67
-    __nesc_result = /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__Receive__default__receive(arg_0x40d6d548, msg, payload, len);
+    __nesc_result = /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__Receive__default__receive(arg_0x40d68548, msg, payload, len);
 #line 67
 
 #line 67
@@ -15444,13 +15472,13 @@ uint8_t len)
 }
 
 # 67 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
-inline static message_t * /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Receive__receive(uart_id_t arg_0x40e35918, message_t * msg, void * payload, uint8_t len){
+inline static message_t * /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Receive__receive(uart_id_t arg_0x40e30918, message_t * msg, void * payload, uint8_t len){
 #line 67
   nx_struct message_t *__nesc_result;
 #line 67
 
 #line 67
-  switch (arg_0x40e35918) {
+  switch (arg_0x40e30918) {
 #line 67
     case TOS_SERIAL_ACTIVE_MESSAGE_ID:
 #line 67
@@ -15460,7 +15488,7 @@ inline static message_t * /*SerialDispatcherC.SerialDispatcherP*/SerialDispatche
 #line 67
     default:
 #line 67
-      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Receive__default__receive(arg_0x40e35918, msg, payload, len);
+      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__Receive__default__receive(arg_0x40e30918, msg, payload, len);
 #line 67
       break;
 #line 67
@@ -15488,13 +15516,13 @@ uint8_t dataLinkLen)
 }
 
 # 31 "/opt/tinyos-2.1.1/tos/lib/serial/SerialPacketInfo.nc"
-inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__upperLength(uart_id_t arg_0x40e31b10, message_t *msg, uint8_t dataLinkLen){
+inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__upperLength(uart_id_t arg_0x40e2cb10, message_t *msg, uint8_t dataLinkLen){
 #line 31
   unsigned char __nesc_result;
 #line 31
 
 #line 31
-  switch (arg_0x40e31b10) {
+  switch (arg_0x40e2cb10) {
 #line 31
     case TOS_SERIAL_ACTIVE_MESSAGE_ID:
 #line 31
@@ -15504,7 +15532,7 @@ inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__
 #line 31
     default:
 #line 31
-      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__upperLength(arg_0x40e31b10, msg, dataLinkLen);
+      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__upperLength(arg_0x40e2cb10, msg, dataLinkLen);
 #line 31
       break;
 #line 31
@@ -15550,16 +15578,16 @@ static inline void /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__
     __nesc_atomic_end(__nesc_atomic); }
 }
 
-# 44 "EasyCollectionWithSerialC.nc"
-static inline void EasyCollectionWithSerialC__SerialControl__stopDone(error_t err)
-#line 44
+# 53 "DataAggregationC.nc"
+static inline void DataAggregationC__SerialControl__stopDone(error_t err)
+#line 53
 {
 }
 
 # 117 "/opt/tinyos-2.1.1/tos/interfaces/SplitControl.nc"
 inline static void SerialP__SplitControl__stopDone(error_t error){
 #line 117
-  EasyCollectionWithSerialC__SerialControl__stopDone(error);
+  DataAggregationC__SerialControl__stopDone(error);
 #line 117
 }
 #line 117
@@ -15699,7 +15727,7 @@ static inline void SerialP__stopDoneTask__runTask(void )
 }
 
 # 83 "/opt/tinyos-2.1.1/tos/interfaces/SplitControl.nc"
-inline static error_t EasyCollectionWithSerialC__RadioControl__start(void ){
+inline static error_t DataAggregationC__RadioControl__start(void ){
 #line 83
   unsigned char __nesc_result;
 #line 83
@@ -15737,7 +15765,7 @@ static inline error_t SerialP__SplitControl__start(void )
 }
 
 # 83 "/opt/tinyos-2.1.1/tos/interfaces/SplitControl.nc"
-inline static error_t EasyCollectionWithSerialC__SerialControl__start(void ){
+inline static error_t DataAggregationC__SerialControl__start(void ){
 #line 83
   unsigned char __nesc_result;
 #line 83
@@ -15751,24 +15779,24 @@ inline static error_t EasyCollectionWithSerialC__SerialControl__start(void ){
 #line 83
 }
 #line 83
-# 36 "EasyCollectionWithSerialC.nc"
-static inline void EasyCollectionWithSerialC__SerialControl__startDone(error_t err)
-#line 36
+# 45 "DataAggregationC.nc"
+static inline void DataAggregationC__SerialControl__startDone(error_t err)
+#line 45
 {
   if (err != SUCCESS) {
-    EasyCollectionWithSerialC__SerialControl__start();
+    DataAggregationC__SerialControl__start();
     }
   else 
-#line 39
+#line 48
     {
-      EasyCollectionWithSerialC__RadioControl__start();
+      DataAggregationC__RadioControl__start();
     }
 }
 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/SplitControl.nc"
 inline static void SerialP__SplitControl__startDone(error_t error){
 #line 92
-  EasyCollectionWithSerialC__SerialControl__startDone(error);
+  DataAggregationC__SerialControl__startDone(error);
 #line 92
 }
 #line 92
@@ -16461,9 +16489,9 @@ static inline void RadioAlarmP__RadioAlarm__default__fired(uint8_t id)
 }
 
 # 48 "/opt/tinyos-2.1.1/tos/chips/rf2xx/util/RadioAlarm.nc"
-inline static void RadioAlarmP__RadioAlarm__fired(uint8_t arg_0x406631b8){
+inline static void RadioAlarmP__RadioAlarm__fired(uint8_t arg_0x406701b8){
 #line 48
-  switch (arg_0x406631b8) {
+  switch (arg_0x406701b8) {
 #line 48
     case 0U:
 #line 48
@@ -16491,7 +16519,7 @@ inline static void RadioAlarmP__RadioAlarm__fired(uint8_t arg_0x406631b8){
 #line 48
     default:
 #line 48
-      RadioAlarmP__RadioAlarm__default__fired(arg_0x406631b8);
+      RadioAlarmP__RadioAlarm__default__fired(arg_0x406701b8);
 #line 48
       break;
 #line 48
@@ -18295,13 +18323,13 @@ static inline uint8_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource_
 }
 
 # 118 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static bool Atm128SpiP__ResourceArbiter__isOwner(uint8_t arg_0x40a9d068){
+inline static bool Atm128SpiP__ResourceArbiter__isOwner(uint8_t arg_0x40abc068){
 #line 118
   unsigned char __nesc_result;
 #line 118
 
 #line 118
-  __nesc_result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__isOwner(arg_0x40a9d068);
+  __nesc_result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__isOwner(arg_0x40abc068);
 #line 118
 
 #line 118
@@ -18338,9 +18366,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConf
 }
 
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__configure(uint8_t arg_0x406fab50){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__configure(uint8_t arg_0x406f5b50){
 #line 49
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__default__configure(arg_0x406fab50);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__default__configure(arg_0x406f5b50);
 #line 49
 }
 #line 49
@@ -18351,9 +18379,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequ
 }
 
 # 51 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__immediateRequested(uint8_t arg_0x406fbed8){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__immediateRequested(uint8_t arg_0x406f6ed8){
 #line 51
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__default__immediateRequested(arg_0x406fbed8);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__default__immediateRequested(arg_0x406f6ed8);
 #line 51
 }
 #line 51
@@ -18401,13 +18429,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource_
 }
 
 # 87 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__immediateRequest(uint8_t arg_0x40a9d068){
+inline static error_t Atm128SpiP__ResourceArbiter__immediateRequest(uint8_t arg_0x40abc068){
 #line 87
   unsigned char __nesc_result;
 #line 87
 
 #line 87
-  __nesc_result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__immediateRequest(arg_0x40a9d068);
+  __nesc_result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__immediateRequest(arg_0x40abc068);
 #line 87
 
 #line 87
@@ -18702,9 +18730,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequ
 }
 
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__requested(uint8_t arg_0x406fbed8){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__requested(uint8_t arg_0x406f6ed8){
 #line 43
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__default__requested(arg_0x406fbed8);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceRequested__default__requested(arg_0x406f6ed8);
 #line 43
 }
 #line 43
@@ -18752,13 +18780,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource_
 }
 
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x40a9d068){
+inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x40abc068){
 #line 78
   unsigned char __nesc_result;
 #line 78
 
 #line 78
-  __nesc_result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__request(arg_0x40a9d068);
+  __nesc_result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__request(arg_0x40abc068);
 #line 78
 
 #line 78
@@ -19043,9 +19071,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConf
 }
 
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__unconfigure(uint8_t arg_0x406fab50){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__unconfigure(uint8_t arg_0x406f5b50){
 #line 55
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__default__unconfigure(arg_0x406fab50);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__ResourceConfigure__default__unconfigure(arg_0x406f5b50);
 #line 55
 }
 #line 55
@@ -19167,13 +19195,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource_
 }
 
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x40a9d068){
+inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x40abc068){
 #line 110
   unsigned char __nesc_result;
 #line 110
 
 #line 110
-  __nesc_result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__release(arg_0x40a9d068);
+  __nesc_result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__release(arg_0x40abc068);
 #line 110
 
 #line 110
@@ -19554,9 +19582,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__
 }
 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
-inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x40d2e448, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
+inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x40d29448, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
 #line 63
-    /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x40d2e448, result, val);
+    /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x40d29448, result, val);
 #line 63
 }
 #line 63
@@ -19569,13 +19597,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x40d2c358){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x40d27358){
 #line 110
   unsigned char __nesc_result;
 #line 110
 
 #line 110
-    __nesc_result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x40d2c358);
+    __nesc_result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x40d27358);
 #line 110
 
 #line 110
@@ -19592,9 +19620,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDo
 }
 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
-inline static void AdcP__Read__readDone(uint8_t arg_0x40d19508, error_t result, AdcP__Read__val_t val){
+inline static void AdcP__Read__readDone(uint8_t arg_0x40d14508, error_t result, AdcP__Read__val_t val){
 #line 63
-  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x40d19508, result, val);
+  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x40d14508, result, val);
 #line 63
 }
 #line 63
@@ -19709,9 +19737,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__defau
 }
 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__granted(uint8_t arg_0x40c447d8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__granted(uint8_t arg_0x40c3f7d8){
 #line 92
-  switch (arg_0x40c447d8) {
+  switch (arg_0x40c3f7d8) {
 #line 92
     case /*PhotoImplP.SharedAnalogDeviceC.Adc*/AdcReadNowClientC__0__HAL_ID:
 #line 92
@@ -19721,7 +19749,7 @@ inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__grant
 #line 92
     default:
 #line 92
-      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__default__granted(arg_0x40c447d8);
+      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__default__granted(arg_0x40c3f7d8);
 #line 92
       break;
 #line 92
@@ -19736,9 +19764,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigu
 }
 
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__configure(uint8_t arg_0x40c425e0){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__configure(uint8_t arg_0x40c3d5e0){
 #line 49
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__configure(arg_0x40c425e0);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__configure(arg_0x40c3d5e0);
 #line 49
 }
 #line 49
@@ -19903,9 +19931,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigu
 }
 
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__unconfigure(uint8_t arg_0x40c425e0){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__unconfigure(uint8_t arg_0x40c3d5e0){
 #line 55
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__unconfigure(arg_0x40c425e0);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__unconfigure(arg_0x40c3d5e0);
 #line 55
 }
 #line 55
@@ -20273,9 +20301,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequest
 }
 
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__requested(uint8_t arg_0x40c43230){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__requested(uint8_t arg_0x40c3e230){
 #line 43
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__default__requested(arg_0x40c43230);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__default__requested(arg_0x40c3e230);
 #line 43
 }
 #line 43
@@ -20342,7 +20370,7 @@ inline static error_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__SendQueue__enqu
 }
 #line 90
 # 50 "/opt/tinyos-2.1.1/tos/lib/net/CollectionIdP.nc"
-static inline collection_id_t /*EasyCollectionWithSerialAppC.CollectionSenderC.CollectionSenderP.CollectionIdP*/CollectionIdP__0__CollectionId__fetch(void )
+static inline collection_id_t /*DataAggregationAppC.CollectionSenderC.CollectionSenderP.CollectionIdP*/CollectionIdP__0__CollectionId__fetch(void )
 #line 50
 {
   return 238U;
@@ -20356,23 +20384,23 @@ static inline collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__Collect
 }
 
 # 46 "/opt/tinyos-2.1.1/tos/lib/net/CollectionId.nc"
-inline static collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__CollectionId__fetch(uint8_t arg_0x41003a10){
+inline static collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__CollectionId__fetch(uint8_t arg_0x40ffea10){
 #line 46
   unsigned char __nesc_result;
 #line 46
 
 #line 46
-  switch (arg_0x41003a10) {
+  switch (arg_0x40ffea10) {
 #line 46
     case 0U:
 #line 46
-      __nesc_result = /*EasyCollectionWithSerialAppC.CollectionSenderC.CollectionSenderP.CollectionIdP*/CollectionIdP__0__CollectionId__fetch();
+      __nesc_result = /*DataAggregationAppC.CollectionSenderC.CollectionSenderP.CollectionIdP*/CollectionIdP__0__CollectionId__fetch();
 #line 46
       break;
 #line 46
     default:
 #line 46
-      __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP__0__CollectionId__default__fetch(arg_0x41003a10);
+      __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP__0__CollectionId__default__fetch(arg_0x40ffea10);
 #line 46
       break;
 #line 46
@@ -20448,7 +20476,7 @@ static inline error_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__send(uint
 }
 
 # 64 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
-inline static error_t EasyCollectionWithSerialC__Send__send(message_t * msg, uint8_t len){
+inline static error_t DataAggregationC__Send__send(message_t * msg, uint8_t len){
 #line 64
   unsigned char __nesc_result;
 #line 64
@@ -20470,7 +20498,7 @@ static inline void */*CtpP.Forwarder*/CtpForwardingEngineP__0__Send__getPayload(
 }
 
 # 114 "/opt/tinyos-2.1.1/tos/interfaces/Send.nc"
-inline static void * EasyCollectionWithSerialC__Send__getPayload(message_t * msg, uint8_t len){
+inline static void * DataAggregationC__Send__getPayload(message_t * msg, uint8_t len){
 #line 114
   void *__nesc_result;
 #line 114
@@ -20484,32 +20512,32 @@ inline static void * EasyCollectionWithSerialC__Send__getPayload(message_t * msg
 #line 114
 }
 #line 114
-# 65 "EasyCollectionWithSerialC.nc"
-static inline void EasyCollectionWithSerialC__sendMessage(uint16_t val)
-#line 65
+# 74 "DataAggregationC.nc"
+static inline void DataAggregationC__sendMessage(uint16_t val)
+#line 74
 {
 
-  EasyCollectionWithSerialC__EasyCollectionWithSerialMsg *msg = (EasyCollectionWithSerialC__EasyCollectionWithSerialMsg *)EasyCollectionWithSerialC__Send__getPayload(&EasyCollectionWithSerialC__packet, sizeof(EasyCollectionWithSerialC__EasyCollectionWithSerialMsg ));
+  DataAggregationC__DataAggregationMsg *msg = (DataAggregationC__DataAggregationMsg *)DataAggregationC__Send__getPayload(&DataAggregationC__packet, sizeof(DataAggregationC__DataAggregationMsg ));
 
-#line 68
+#line 77
   __nesc_hton_uint16(msg->nodeid.nxdata, TOS_NODE_ID);
   __nesc_hton_uint16(msg->data.nxdata, val);
-  if (EasyCollectionWithSerialC__Send__send(&EasyCollectionWithSerialC__packet, sizeof(EasyCollectionWithSerialC__EasyCollectionWithSerialMsg )) != SUCCESS) 
+  if (DataAggregationC__Send__send(&DataAggregationC__packet, sizeof(DataAggregationC__DataAggregationMsg )) != SUCCESS) 
     {
     }
   else {
-#line 73
-    EasyCollectionWithSerialC__sendBusy = TRUE;
+#line 82
+    DataAggregationC__sendBusy = TRUE;
     }
 }
 
-#line 76
-static inline void EasyCollectionWithSerialC__Read__readDone(error_t err, uint16_t val)
+#line 85
+static inline void DataAggregationC__Read__readDone(error_t err, uint16_t val)
 {
   if (err == SUCCESS) 
     {
-      if (!EasyCollectionWithSerialC__sendBusy) {
-        EasyCollectionWithSerialC__sendMessage(val);
+      if (!DataAggregationC__sendBusy) {
+        DataAggregationC__sendMessage(val);
         }
     }
 }
@@ -20521,19 +20549,19 @@ static inline void /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__R
 }
 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
-inline static void /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__readDone(uint8_t arg_0x40d2e448, error_t result, /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__val_t val){
+inline static void /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__readDone(uint8_t arg_0x40d29448, error_t result, /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__val_t val){
 #line 63
-  switch (arg_0x40d2e448) {
+  switch (arg_0x40d29448) {
 #line 63
     case 0U:
 #line 63
-      EasyCollectionWithSerialC__Read__readDone(result, val);
+      DataAggregationC__Read__readDone(result, val);
 #line 63
       break;
 #line 63
     default:
 #line 63
-      /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__default__readDone(arg_0x40d2e448, result, val);
+      /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Read__default__readDone(arg_0x40d29448, result, val);
 #line 63
       break;
 #line 63
@@ -20580,9 +20608,9 @@ static inline void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0
 }
 
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
-inline static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x40c425e0){
+inline static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x40c3d5e0){
 #line 55
-    /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x40c425e0);
+    /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x40c3d5e0);
 #line 55
 }
 #line 55
@@ -20753,13 +20781,13 @@ static inline error_t /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP
 }
 
 # 110 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Resource__release(uint8_t arg_0x40d2c358){
+inline static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Resource__release(uint8_t arg_0x40d27358){
 #line 110
   unsigned char __nesc_result;
 #line 110
 
 #line 110
-  __nesc_result = /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resource__release(arg_0x40d2c358);
+  __nesc_result = /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resource__release(arg_0x40d27358);
 #line 110
 
 #line 110
@@ -20776,9 +20804,9 @@ static inline void /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__S
 }
 
 # 63 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
-inline static void /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__Read__readDone(uint8_t arg_0x40c788c8, error_t result, /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__Read__val_t val){
+inline static void /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__Read__readDone(uint8_t arg_0x40c738c8, error_t result, /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__Read__val_t val){
 #line 63
-  /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Service__readDone(arg_0x40c788c8, result, val);
+  /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Service__readDone(arg_0x40c738c8, result, val);
 #line 63
 }
 #line 63
@@ -21038,13 +21066,13 @@ static inline error_t /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalo
 }
 
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
-inline static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Service__read(uint8_t arg_0x40d2d480){
+inline static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Service__read(uint8_t arg_0x40d28480){
 #line 55
   unsigned char __nesc_result;
 #line 55
 
 #line 55
-  __nesc_result = /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__Read__read(arg_0x40d2d480);
+  __nesc_result = /*PhotoImplP.SharedAnalogDeviceC.AnalogDevice*/SharedAnalogDeviceP__0__Read__read(arg_0x40d28480);
 #line 55
 
 #line 55
@@ -21060,9 +21088,9 @@ static inline void /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__R
 }
 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x40c447d8){
+inline static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x40c3f7d8){
 #line 92
-  /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Resource__granted(arg_0x40c447d8);
+  /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Resource__granted(arg_0x40c3f7d8);
 #line 92
 }
 #line 92
@@ -21073,9 +21101,9 @@ static inline void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0
 }
 
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/ResourceConfigure.nc"
-inline static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x40c425e0){
+inline static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x40c3d5e0){
 #line 49
-    /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x40c425e0);
+    /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x40c3d5e0);
 #line 49
 }
 #line 49
@@ -21312,13 +21340,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getChannel(uint8_t c)
 }
 
 # 25 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x40d179c0){
+inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x40d129c0){
 #line 25
   unsigned char __nesc_result;
 #line 25
 
 #line 25
-  switch (arg_0x40d179c0) {
+  switch (arg_0x40d129c0) {
 #line 25
     case /*PhotoImplP.SharedAnalogDeviceC.Adc*/AdcReadNowClientC__0__ID:
 #line 25
@@ -21328,7 +21356,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x40d179c0){
 #line 25
     default:
 #line 25
-      __nesc_result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x40d179c0);
+      __nesc_result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x40d129c0);
 #line 25
       break;
 #line 25
@@ -21362,13 +21390,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(uint8_t c)
 }
 
 # 32 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x40d179c0){
+inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x40d129c0){
 #line 32
   unsigned char __nesc_result;
 #line 32
 
 #line 32
-  switch (arg_0x40d179c0) {
+  switch (arg_0x40d129c0) {
 #line 32
     case /*PhotoImplP.SharedAnalogDeviceC.Adc*/AdcReadNowClientC__0__ID:
 #line 32
@@ -21378,7 +21406,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x40d179c
 #line 32
     default:
 #line 32
-      __nesc_result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x40d179c0);
+      __nesc_result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x40d129c0);
 #line 32
       break;
 #line 32
@@ -21412,13 +21440,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(uint8_t c)
 }
 
 # 39 "/opt/tinyos-2.1.1/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x40d179c0){
+inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x40d129c0){
 #line 39
   unsigned char __nesc_result;
 #line 39
 
 #line 39
-  switch (arg_0x40d179c0) {
+  switch (arg_0x40d129c0) {
 #line 39
     case /*PhotoImplP.SharedAnalogDeviceC.Adc*/AdcReadNowClientC__0__ID:
 #line 39
@@ -21428,7 +21456,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x40d179c0
 #line 39
     default:
 #line 39
-      __nesc_result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x40d179c0);
+      __nesc_result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x40d129c0);
 #line 39
       break;
 #line 39
@@ -21536,9 +21564,9 @@ static inline void Atm128SpiP__Resource__default__granted(uint8_t id)
 }
 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x40a9f398){
+inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x40a9a398){
 #line 92
-  switch (arg_0x40a9f398) {
+  switch (arg_0x40a9a398) {
 #line 92
     case 0U:
 #line 92
@@ -21548,7 +21576,7 @@ inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x40a9f398){
 #line 92
     default:
 #line 92
-      Atm128SpiP__Resource__default__granted(arg_0x40a9f398);
+      Atm128SpiP__Resource__default__granted(arg_0x40a9a398);
 #line 92
       break;
 #line 92
@@ -21564,9 +21592,9 @@ static inline void Atm128SpiP__ResourceArbiter__granted(uint8_t id)
 }
 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__granted(uint8_t arg_0x406fb4b0){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__1__Resource__granted(uint8_t arg_0x406f64b0){
 #line 92
-  Atm128SpiP__ResourceArbiter__granted(arg_0x406fb4b0);
+  Atm128SpiP__ResourceArbiter__granted(arg_0x406f64b0);
 #line 92
 }
 #line 92
@@ -21925,13 +21953,13 @@ uint8_t len)
 }
 
 # 67 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
-inline static message_t * /*CtpP.Forwarder*/CtpForwardingEngineP__0__Snoop__receive(collection_id_t arg_0x40fe7608, message_t * msg, void * payload, uint8_t len){
+inline static message_t * /*CtpP.Forwarder*/CtpForwardingEngineP__0__Snoop__receive(collection_id_t arg_0x40fe2608, message_t * msg, void * payload, uint8_t len){
 #line 67
   nx_struct message_t *__nesc_result;
 #line 67
 
 #line 67
-    __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP__0__Snoop__default__receive(arg_0x40fe7608, msg, payload, len);
+    __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP__0__Snoop__default__receive(arg_0x40fe2608, msg, payload, len);
 #line 67
 
 #line 67
@@ -22022,13 +22050,13 @@ static inline message_t *ActiveMessageLayerP__Snoop__default__receive(am_id_t id
 }
 
 # 67 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
-inline static message_t * ActiveMessageLayerP__Snoop__receive(am_id_t arg_0x4068bcc0, message_t * msg, void * payload, uint8_t len){
+inline static message_t * ActiveMessageLayerP__Snoop__receive(am_id_t arg_0x40686cc0, message_t * msg, void * payload, uint8_t len){
 #line 67
   nx_struct message_t *__nesc_result;
 #line 67
 
 #line 67
-  switch (arg_0x4068bcc0) {
+  switch (arg_0x40686cc0) {
 #line 67
     case 113:
 #line 67
@@ -22038,7 +22066,7 @@ inline static message_t * ActiveMessageLayerP__Snoop__receive(am_id_t arg_0x4068
 #line 67
     default:
 #line 67
-      __nesc_result = ActiveMessageLayerP__Snoop__default__receive(arg_0x4068bcc0, msg, payload, len);
+      __nesc_result = ActiveMessageLayerP__Snoop__default__receive(arg_0x40686cc0, msg, payload, len);
 #line 67
       break;
 #line 67
@@ -22358,13 +22386,13 @@ uint8_t len)
 }
 
 # 31 "/opt/tinyos-2.1.1/tos/interfaces/Intercept.nc"
-inline static bool /*CtpP.Forwarder*/CtpForwardingEngineP__0__Intercept__forward(collection_id_t arg_0x40fe7cb0, message_t * msg, void * payload, uint8_t len){
+inline static bool /*CtpP.Forwarder*/CtpForwardingEngineP__0__Intercept__forward(collection_id_t arg_0x40fe2cb0, message_t * msg, void * payload, uint8_t len){
 #line 31
   unsigned char __nesc_result;
 #line 31
 
 #line 31
-    __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP__0__Intercept__default__forward(arg_0x40fe7cb0, msg, payload, len);
+    __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP__0__Intercept__default__forward(arg_0x40fe2cb0, msg, payload, len);
 #line 31
 
 #line 31
@@ -22437,13 +22465,13 @@ static __inline uint8_t ActiveMessageLayerP__AMSend__maxPayloadLength(am_id_t id
 }
 
 # 112 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
-inline static uint8_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__maxPayloadLength(am_id_t arg_0x41174c40){
+inline static uint8_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__maxPayloadLength(am_id_t arg_0x4116fc40){
 #line 112
   unsigned char __nesc_result;
 #line 112
 
 #line 112
-  __nesc_result = ActiveMessageLayerP__AMSend__maxPayloadLength(arg_0x41174c40);
+  __nesc_result = ActiveMessageLayerP__AMSend__maxPayloadLength(arg_0x4116fc40);
 #line 112
 
 #line 112
@@ -22973,13 +23001,13 @@ static inline message_t *ActiveMessageLayerP__Receive__default__receive(am_id_t 
 }
 
 # 67 "/opt/tinyos-2.1.1/tos/interfaces/Receive.nc"
-inline static message_t * ActiveMessageLayerP__Receive__receive(am_id_t arg_0x4068b628, message_t * msg, void * payload, uint8_t len){
+inline static message_t * ActiveMessageLayerP__Receive__receive(am_id_t arg_0x40686628, message_t * msg, void * payload, uint8_t len){
 #line 67
   nx_struct message_t *__nesc_result;
 #line 67
 
 #line 67
-  switch (arg_0x4068b628) {
+  switch (arg_0x40686628) {
 #line 67
     case 112:
 #line 67
@@ -22995,7 +23023,7 @@ inline static message_t * ActiveMessageLayerP__Receive__receive(am_id_t arg_0x40
 #line 67
     default:
 #line 67
-      __nesc_result = ActiveMessageLayerP__Receive__default__receive(arg_0x4068b628, msg, payload, len);
+      __nesc_result = ActiveMessageLayerP__Receive__default__receive(arg_0x40686628, msg, payload, len);
 #line 67
       break;
 #line 67
@@ -23558,9 +23586,9 @@ static inline void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(am
 }
 
 # 99 "/opt/tinyos-2.1.1/tos/interfaces/AMSend.nc"
-inline static void ActiveMessageLayerP__AMSend__sendDone(am_id_t arg_0x4068cc18, message_t * msg, error_t error){
+inline static void ActiveMessageLayerP__AMSend__sendDone(am_id_t arg_0x40687c18, message_t * msg, error_t error){
 #line 99
-  /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(arg_0x4068cc18, msg, error);
+  /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(arg_0x40687c18, msg, error);
 #line 99
 }
 #line 99
@@ -23635,9 +23663,9 @@ inline static void MessageBufferLayerP__RadioChannel__setChannelDone(void ){
 #line 37
 }
 #line 37
-# 63 "EasyCollectionWithSerialC.nc"
-static inline void EasyCollectionWithSerialC__RadioControl__stopDone(error_t err)
-#line 63
+# 72 "DataAggregationC.nc"
+static inline void DataAggregationC__RadioControl__stopDone(error_t err)
+#line 72
 {
 }
 
@@ -23665,12 +23693,12 @@ inline static void MessageBufferLayerP__SplitControl__stopDone(error_t error){
 #line 117
   /*CtpP.Forwarder*/CtpForwardingEngineP__0__RadioControl__stopDone(error);
 #line 117
-  EasyCollectionWithSerialC__RadioControl__stopDone(error);
+  DataAggregationC__RadioControl__stopDone(error);
 #line 117
 }
 #line 117
 # 53 "/opt/tinyos-2.1.1/tos/lib/timer/Timer.nc"
-inline static void EasyCollectionWithSerialC__Timer__startPeriodic(uint32_t dt){
+inline static void DataAggregationC__Timer__startPeriodic(uint32_t dt){
 #line 53
   /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(5U, dt);
 #line 53
@@ -23703,7 +23731,7 @@ static inline error_t /*CtpP.Router*/CtpRoutingEngineP__0__RootControl__setRoot(
 }
 
 # 41 "/opt/tinyos-2.1.1/tos/lib/net/RootControl.nc"
-inline static error_t EasyCollectionWithSerialC__RootControl__setRoot(void ){
+inline static error_t DataAggregationC__RootControl__setRoot(void ){
 #line 41
   unsigned char __nesc_result;
 #line 41
@@ -23755,7 +23783,7 @@ static inline error_t /*CtpP.Forwarder*/CtpForwardingEngineP__0__StdControl__sta
 }
 
 # 74 "/opt/tinyos-2.1.1/tos/interfaces/StdControl.nc"
-inline static error_t EasyCollectionWithSerialC__RoutingControl__start(void ){
+inline static error_t DataAggregationC__RoutingControl__start(void ){
 #line 74
   unsigned char __nesc_result;
 #line 74
@@ -23773,23 +23801,23 @@ inline static error_t EasyCollectionWithSerialC__RoutingControl__start(void ){
 #line 74
 }
 #line 74
-# 46 "EasyCollectionWithSerialC.nc"
-static inline void EasyCollectionWithSerialC__RadioControl__startDone(error_t err)
-#line 46
+# 55 "DataAggregationC.nc"
+static inline void DataAggregationC__RadioControl__startDone(error_t err)
+#line 55
 {
   if (err != SUCCESS) {
-    EasyCollectionWithSerialC__RadioControl__start();
+    DataAggregationC__RadioControl__start();
     }
   else 
-#line 49
+#line 58
     {
-      EasyCollectionWithSerialC__RoutingControl__start();
+      DataAggregationC__RoutingControl__start();
       if (TOS_NODE_ID == 1) {
-          EasyCollectionWithSerialC__RootControl__setRoot();
+          DataAggregationC__RootControl__setRoot();
         }
       else 
         {
-          EasyCollectionWithSerialC__Timer__startPeriodic(2000);
+          DataAggregationC__Timer__startPeriodic(500);
         }
     }
 }
@@ -23852,7 +23880,7 @@ inline static void MessageBufferLayerP__SplitControl__startDone(error_t error){
 #line 92
   /*CtpP.Forwarder*/CtpForwardingEngineP__0__RadioControl__startDone(error);
 #line 92
-  EasyCollectionWithSerialC__RadioControl__startDone(error);
+  DataAggregationC__RadioControl__startDone(error);
 #line 92
 }
 #line 92
@@ -24286,9 +24314,9 @@ static inline void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0
 }
 
 # 43 "/opt/tinyos-2.1.1/tos/interfaces/ResourceRequested.nc"
-inline static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x40c43230){
+inline static void /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x40c3e230){
 #line 43
-    /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x40c43230);
+    /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x40c3e230);
 #line 43
 }
 #line 43
@@ -24325,13 +24353,13 @@ static inline error_t /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP
 }
 
 # 78 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Resource__request(uint8_t arg_0x40d2c358){
+inline static error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1__Resource__request(uint8_t arg_0x40d27358){
 #line 78
   unsigned char __nesc_result;
 #line 78
 
 #line 78
-  __nesc_result = /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resource__request(arg_0x40d2c358);
+  __nesc_result = /*PhotoImplP.SharedAnalogDeviceC.Arbiter.Arbiter*/ArbiterP__0__Resource__request(arg_0x40d27358);
 #line 78
 
 #line 78
@@ -24347,7 +24375,7 @@ static inline error_t /*ArbitratedPhotoDeviceP.ArbitrateRead*/ArbitratedReadC__1
 }
 
 # 55 "/opt/tinyos-2.1.1/tos/interfaces/Read.nc"
-inline static error_t EasyCollectionWithSerialC__Read__read(void ){
+inline static error_t DataAggregationC__Read__read(void ){
 #line 55
   unsigned char __nesc_result;
 #line 55
@@ -24391,19 +24419,19 @@ static inline void LedsP__Leds__led2Toggle(void )
 }
 
 # 89 "/opt/tinyos-2.1.1/tos/interfaces/Leds.nc"
-inline static void EasyCollectionWithSerialC__Leds__led2Toggle(void ){
+inline static void DataAggregationC__Leds__led2Toggle(void ){
 #line 89
   LedsP__Leds__led2Toggle();
 #line 89
 }
 #line 89
-# 85 "EasyCollectionWithSerialC.nc"
-static inline void EasyCollectionWithSerialC__Timer__fired(void )
-#line 85
+# 94 "DataAggregationC.nc"
+static inline void DataAggregationC__Timer__fired(void )
+#line 94
 {
-  EasyCollectionWithSerialC__Leds__led2Toggle();
+  DataAggregationC__Leds__led2Toggle();
 
-  EasyCollectionWithSerialC__Read__read();
+  DataAggregationC__Read__read();
 }
 
 # 193 "/opt/tinyos-2.1.1/tos/lib/timer/VirtualizeTimerC.nc"
@@ -24412,9 +24440,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 72 "/opt/tinyos-2.1.1/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x408c3708){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x408da708){
 #line 72
-  switch (arg_0x408c3708) {
+  switch (arg_0x408da708) {
 #line 72
     case 0U:
 #line 72
@@ -24448,13 +24476,13 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 72
     case 5U:
 #line 72
-      EasyCollectionWithSerialC__Timer__fired();
+      DataAggregationC__Timer__fired();
 #line 72
       break;
 #line 72
     default:
 #line 72
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x408c3708);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x408da708);
 #line 72
       break;
 #line 72
@@ -24666,9 +24694,9 @@ static inline void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resou
 }
 
 # 92 "/opt/tinyos-2.1.1/tos/interfaces/Resource.nc"
-inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x406fb4b0){
+inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x406f64b0){
 #line 92
-  switch (arg_0x406fb4b0) {
+  switch (arg_0x406f64b0) {
 #line 92
     case 0U:
 #line 92
@@ -24678,7 +24706,7 @@ inline static void /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resou
 #line 92
     default:
 #line 92
-      /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resource__default__granted(arg_0x406fb4b0);
+      /*RF230RadioC.SendResourceC.Arbiter*/SimpleArbiterP__0__Resource__default__granted(arg_0x406f64b0);
 #line 92
       break;
 #line 92
@@ -25221,17 +25249,17 @@ inline static error_t RealMainP__SoftwareInit__init(void ){
 #line 51
 }
 #line 51
-# 32 "EasyCollectionWithSerialC.nc"
-static inline void EasyCollectionWithSerialC__Boot__booted(void )
-#line 32
+# 41 "DataAggregationC.nc"
+static inline void DataAggregationC__Boot__booted(void )
+#line 41
 {
-  EasyCollectionWithSerialC__SerialControl__start();
+  DataAggregationC__SerialControl__start();
 }
 
 # 49 "/opt/tinyos-2.1.1/tos/interfaces/Boot.nc"
 inline static void RealMainP__Boot__booted(void ){
 #line 49
-  EasyCollectionWithSerialC__Boot__booted();
+  DataAggregationC__Boot__booted();
 #line 49
 }
 #line 49
@@ -25937,9 +25965,9 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 }
 
 # 66 "/opt/tinyos-2.1.1/tos/interfaces/ReadNow.nc"
-inline static void AdcP__ReadNow__readDone(uint8_t arg_0x40d184a8, error_t result, AdcP__ReadNow__val_t val){
+inline static void AdcP__ReadNow__readDone(uint8_t arg_0x40d134a8, error_t result, AdcP__ReadNow__val_t val){
 #line 66
-  switch (arg_0x40d184a8) {
+  switch (arg_0x40d134a8) {
 #line 66
     case /*PhotoImplP.SharedAnalogDeviceC.Adc*/AdcReadNowClientC__0__ID:
 #line 66
@@ -25949,7 +25977,7 @@ inline static void AdcP__ReadNow__readDone(uint8_t arg_0x40d184a8, error_t resul
 #line 66
     default:
 #line 66
-      AdcP__ReadNow__default__readDone(arg_0x40d184a8, result, val);
+      AdcP__ReadNow__default__readDone(arg_0x40d134a8, result, val);
 #line 66
       break;
 #line 66
@@ -27876,25 +27904,26 @@ static void */*CtpP.Forwarder*/CtpForwardingEngineP__0__Packet__getPayload(messa
   return payload;
 }
 
-# 108 "EasyCollectionWithSerialC.nc"
-static message_t *EasyCollectionWithSerialC__Receive__receive(message_t *msg, void *payload, uint8_t len)
+# 134 "DataAggregationC.nc"
+static message_t *DataAggregationC__Receive__receive(message_t *msg, void *payload, uint8_t len)
 {
 
-  if (EasyCollectionWithSerialC__locked) {
+  if (DataAggregationC__locked) {
       return msg;
     }
   else {
-      EasyCollectionWithSerialC__EasyCollectionWithSerialMsg *rcm = (EasyCollectionWithSerialC__EasyCollectionWithSerialMsg *)payload;
-      EasyCollectionWithSerialC__EasyCollectionWithSerialMsg *sendMsg = (EasyCollectionWithSerialC__EasyCollectionWithSerialMsg *)EasyCollectionWithSerialC__Packet__getPayload(&EasyCollectionWithSerialC__packet, sizeof(EasyCollectionWithSerialC__EasyCollectionWithSerialMsg ));
+      DataAggregationC__DataAggregationMsg *rcm = (DataAggregationC__DataAggregationMsg *)payload;
+      DataAggregationC__DataAggregationMsg *sendMsg = (DataAggregationC__DataAggregationMsg *)DataAggregationC__Packet__getPayload(&DataAggregationC__packet, sizeof(DataAggregationC__DataAggregationMsg ));
 
-      if (len == sizeof(EasyCollectionWithSerialC__EasyCollectionWithSerialMsg ) && rcm != (void *)0) {
-          EasyCollectionWithSerialC__Leds__led0Toggle();
+      if (len == sizeof(DataAggregationC__DataAggregationMsg ) && rcm != (void *)0) {
+          DataAggregationC__Leds__led0Toggle();
+          DataAggregationC__doMathsStuff(__nesc_ntoh_uint16(rcm->data.nxdata), __nesc_ntoh_uint16(rcm->nodeid.nxdata));
           *sendMsg = *rcm;
 
-          if (EasyCollectionWithSerialC__AMSend__send(AM_BROADCAST_ADDR, &EasyCollectionWithSerialC__packet, sizeof(EasyCollectionWithSerialC__EasyCollectionWithSerialMsg )) == SUCCESS) {
+          if (DataAggregationC__AMSend__send(AM_BROADCAST_ADDR, &DataAggregationC__packet, sizeof(DataAggregationC__DataAggregationMsg )) == SUCCESS) {
 
-              EasyCollectionWithSerialC__Leds__led2On();
-              EasyCollectionWithSerialC__locked = TRUE;
+              DataAggregationC__Leds__led2On();
+              DataAggregationC__locked = TRUE;
             }
         }
     }

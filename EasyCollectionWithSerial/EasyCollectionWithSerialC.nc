@@ -13,6 +13,7 @@ uses interface RootControl;
 uses interface Receive;
 uses interface AMSend;
 uses interface Packet;
+uses interface Read<uint16_t>;
 }
  
 implementation {
@@ -57,24 +58,35 @@ implementation {
 			}
 		}
 	}
-	
+
 	
 	event void RadioControl.stopDone(error_t err){}
 	
-	void sendMessage(){
+	void sendMessage(uint16_t val){
+	 	
+			EasyCollectionWithSerialMsg* msg = (EasyCollectionWithSerialMsg*)call Send.getPayload(&packet,sizeof(EasyCollectionWithSerialMsg));
+			msg->nodeid = TOS_NODE_ID;
+			msg->data = val;
+			if(call Send.send(&packet,sizeof(EasyCollectionWithSerialMsg)) != SUCCESS)
+				{}
+			else
+				sendBusy=TRUE;
+	}
 	
-		EasyCollectionWithSerialMsg* msg = (EasyCollectionWithSerialMsg*)call Send.getPayload(&packet,sizeof(EasyCollectionWithSerialMsg));
-		msg->nodeid = TOS_NODE_ID;
-		if(call Send.send(&packet,sizeof(EasyCollectionWithSerialMsg)) != SUCCESS)
-			{}
-		else
-			sendBusy=TRUE;
+	event void Read.readDone(error_t err, uint16_t val)
+	{
+		if(err == SUCCESS)
+		{
+			if(!sendBusy)
+				sendMessage(val);
 		}
+	}
 		
 	event void Timer.fired(){
 		call Leds.led2Toggle();
-		if(!sendBusy)
-			sendMessage();
+		
+		call Read.read();
+	//		sendMessage();
 	}
 	
 	event void AMSend.sendDone(message_t* bufPtr, error_t error) {

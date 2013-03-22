@@ -4,13 +4,15 @@ configuration EasyCollectionWithSerialAppC{}
 
 implementation {
 
-	components EasyCollectionWithSerialC, MainC, LedsC, ActiveMessageC;
+	components EasyCollectionWithSerialC, MainC, LedsC, ActiveMessageC, new PhotoSensorC() as Sensor;
 	
   components SerialActiveMessageC as AM;
+  EasyCollectionWithSerialC.SerialControl -> AM;
 	
   EasyCollectionWithSerialC.AMSend -> AM.AMSend[AM_TEST_SERIAL_MSG];
   EasyCollectionWithSerialC.Packet -> AM;
 
+	EasyCollectionWithSerialC.Read -> Sensor;
 
 	components CollectionC as Collector;
 	components new CollectionSenderC(0xee);

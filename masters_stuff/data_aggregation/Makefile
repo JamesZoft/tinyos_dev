@@ -1,4 +1,4 @@
-COMPONENT=EasyCollectionWithSerialAppC
+COMPONENT=DataAggregationAppC
 SENSORBOARD=mda100
 CFLAGS += -I/opt/tinyos-2.1.1/tos/lib/net \
           -I/opt/tinyos-2.1.1/tos/lib/net/le \
